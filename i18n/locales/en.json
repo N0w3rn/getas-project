@@ -1,0 +1,27 @@
+{
+  "welcome": "Welcome",
+  "description": "WIP Page as an example",
+  "team": "Team",
+  "back": "Back",
+  "map": {
+    "location-1": "Location 1",
+    "location-2": "Location 2",
+    "location-1_content": "Information about Location 1...",
+    "location-2_content": "Information about Location 2...",
+    "zoom_in": "Zoom In",
+    "zoom_out": "Zoom Out",
+    "reset": "Reset"
+  },
+  "words": {
+    "freedom": "Freedom",
+    "nature": "Nature",
+    "border": "Border",
+    "change": "Change",
+    "connection": "Connection",
+    "freedom_content": "Content about freedom...",
+    "nature_content": "Content about nature...",
+    "border_content": "Content about borders...",
+    "change_content": "Content about change...",
+    "connection_content": "Content about connection..."
+  }
+}
