@@ -19,11 +19,11 @@
       </div>
 
       <!-- Interaktive Karte -->
-      <div>
+      <div class="h-40">
         <InteractiveMap
           :background-image="mapBackground"
           :markers="mapMarkers"
-          :map-height="1200"
+          :map-height="2000"
         />
       </div>
 

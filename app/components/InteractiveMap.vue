@@ -38,11 +38,11 @@
       </div>
     </div>
 
-    <!-- Map Container -->
+    <!-- Map Container - SCROLLBAR FUNKTIONIERT -->
     <div
       ref="mapContainer"
       class="relative overflow-auto cursor-grab active:cursor-grabbing bg-slate-50"
-      :style="{ height: containerHeight + 'px' }"
+      style="height: 1200px;"
       @mousedown="startDrag"
       @mousemove="drag"
       @mouseup="stopDrag"
@@ -51,7 +51,7 @@
       @touchmove="drag"
       @touchend="stopDrag"
     >
-      <!-- Spacer for scroll area - this has the REAL scaled size -->
+      <!-- Spacer for scroll area - creates scrollable space -->
       <div
         class="relative"
         :style="{
@@ -61,7 +61,7 @@
           minHeight: '100%'
         }"
       >
-        <!-- Map Image and Markers Container - visually scaled -->
+        <!-- Scaled Image Container -->
         <div
           ref="mapContent"
           class="absolute"
@@ -75,13 +75,13 @@
             transition: isDragging ? 'none' : 'transform 0.3s ease-out'
           }"
         >
-          <!-- Background Image -->
+          <!-- Background Image - CONTAIN = VOLLES BILD -->
           <img
             v-if="backgroundImage"
             ref="mapImage"
             :src="backgroundImage"
             class="w-full h-full select-none pointer-events-none"
-            style="display: block; object-fit: cover;"
+            style="display: block; object-fit: contain;"
             draggable="false"
             @load="onImageLoad"
           />
@@ -94,7 +94,7 @@
             <span class="text-slate-500">Not Found</span>
           </div>
 
-          <!-- Markers -->
+          <!-- Markers - GRÖßE BLEIBT GLEICH -->
           <NuxtLink
             v-for="marker in visibleMarkers"
             :key="marker.id"
@@ -158,11 +158,11 @@ const mapContainer = ref(null)
 const mapContent = ref(null)
 const mapImage = ref(null)
 
-// Display dimensions (base size)
+// Display dimensions (base size for contain)
 const displayWidth = ref(0)
 const displayHeight = ref(0)
 
-// Scaled dimensions (actual size after zoom)
+// Scaled dimensions (for scroll area)
 const scaledWidth = computed(() => displayWidth.value * currentZoom.value)
 const scaledHeight = computed(() => displayHeight.value * currentZoom.value)
 
@@ -187,30 +187,29 @@ const visibleMarkers = computed(() => {
   return props.markers.filter(marker => marker.image)
 })
 
-// Calculate dimensions - make image fill container like background-size: cover
+// Calculate dimensions - CONTAIN (show full image)
 const calculateDimensions = () => {
   if (!mapImage.value || !mapContainer.value) return
 
   const containerWidth = mapContainer.value.clientWidth
-  const containerHeight = props.containerHeight
+  const containerHeight = 1200 // Fixed height
 
   const imageNaturalWidth = mapImage.value.naturalWidth
   const imageNaturalHeight = mapImage.value.naturalHeight
   const imageAspectRatio = imageNaturalWidth / imageNaturalHeight
   const containerAspectRatio = containerWidth / containerHeight
 
-  // Cover behavior: fill entire container, may crop
+  // CONTAIN: Show entire image, no cropping
   if (imageAspectRatio > containerAspectRatio) {
-    // Image is wider - fit by height
-    displayHeight.value = containerHeight
-    displayWidth.value = containerHeight * imageAspectRatio
-  } else {
-    // Image is taller - fit by width
+    // Image wider - fit by width
     displayWidth.value = containerWidth
     displayHeight.value = containerWidth / imageAspectRatio
+  } else {
+    // Image taller - fit by height
+    displayHeight.value = containerHeight
+    displayWidth.value = containerHeight * imageAspectRatio
   }
 
-  // Reset zoom
   currentZoom.value = minZoom
 }
 
@@ -255,7 +254,6 @@ const adjustScrollForZoom = (oldZoom, newZoom) => {
     const container = mapContainer.value
     const zoomRatio = newZoom / oldZoom
 
-    // Keep zoom centered on viewport center
     const centerX = container.scrollLeft + container.clientWidth / 2
     const centerY = container.scrollTop + container.clientHeight / 2
 
@@ -272,7 +270,7 @@ const resetView = () => {
 // Drag functions
 const startDrag = (e) => {
   if (e.target.tagName === 'A' || (e.target.tagName === 'IMG' && e.target.parentElement.tagName === 'A')) {
-    return // Don't drag when clicking markers
+    return
   }
 
   isDragging.value = true
@@ -318,7 +316,7 @@ const stopDrag = () => {
   isDragging.value = false
 }
 
-// Responsive marker sizing
+// Marker sizing - KOMPENSIERT ZOOM
 const updateScreenSize = () => {
   if (process.client) {
     isMobile.value = window.innerWidth < 768
@@ -329,6 +327,7 @@ const updateScreenSize = () => {
 const getMarkerSize = (marker) => {
   const baseSize = marker.size || 50
   const sizeAdjustment = isMobile.value ? 0.7 : 1
+  // TEILEN durch currentZoom = Marker bleibt gleich groß!
   return (baseSize / currentZoom.value) * sizeAdjustment
 }
 
