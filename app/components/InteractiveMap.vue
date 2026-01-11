@@ -106,12 +106,11 @@
           >
             <NuxtLink
               :to="localePath(`/map/${marker.slug}`)"
-              class="block group cursor-pointer hover:z-50 pointer-events-auto"
+              class="block group cursor-pointer hover:z-50 pointer-events-auto marker-link"
               :style="{
                 transform: `translate(-50%, -50%) scale(${getMarkerScale(marker)})`,
                 transformOrigin: 'center center'
               }"
-              @click.stop
             >
               <div class="relative">
                 <img
@@ -291,10 +290,23 @@ const resetView = () => {
   centerView()
 }
 
-// Drag functions
+// Drag functions - MIT TOUCH-FIX
 const startDrag = (e) => {
-  if (e.target.tagName === 'A' || (e.target.tagName === 'IMG' && e.target.parentElement.tagName === 'A')) {
-    return // Don't drag when clicking markers
+  // Check if touching a marker or its children
+  let target = e.target
+  let isMarker = false
+  
+  // Traverse up to check if we're inside a marker link
+  while (target && target !== mapContainer.value) {
+    if (target.tagName === 'A' || target.classList.contains('marker-link')) {
+      isMarker = true
+      break
+    }
+    target = target.parentElement
+  }
+  
+  if (isMarker) {
+    return // Don't drag when touching markers
   }
 
   isDragging.value = true
@@ -384,9 +396,18 @@ onUnmounted(() => {
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: pan-x pan-y;
 }
 
 .cursor-grab:active {
   cursor: grabbing;
+}
+
+.marker-link {
+  touch-action: auto !important;
+}
+
+.pointer-events-auto {
+  touch-action: auto !important;
 }
 </style>
