@@ -13,7 +13,7 @@
       </div>
 
       <!-- Fliegende Wörter Komponente -->
-      <div>
+      <div class="relative w-full bg-white rounded-lg shadow-lg overflow-hidden p-6 font-semibold">
         <!-- <FlyingWords /> -->
         {{ $t('indexPageTextBlock1') }}
       </div>
@@ -49,7 +49,7 @@ const mapMarkers = [
     label: true // Zeigt Tooltip beim Hover
   },
   {
-    id: 'marker-2',
+    id: 'hedgehog-next-to-bush',
     slug: 'hedgehog',
     image: '/images/markers/hedgehog.gif',
     x: 70,

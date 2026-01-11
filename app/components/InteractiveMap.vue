@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <!-- Map Container - SCROLLBAR FUNKTIONIERT -->
+    <!-- Map Container -->
     <div
       ref="mapContainer"
       class="relative overflow-auto cursor-grab active:cursor-grabbing bg-slate-50"
@@ -51,7 +51,7 @@
       @touchmove="drag"
       @touchend="stopDrag"
     >
-      <!-- Spacer for scroll area - creates scrollable space -->
+      <!-- Spacer for scroll area -->
       <div
         class="relative"
         :style="{
@@ -61,7 +61,7 @@
           minHeight: '100%'
         }"
       >
-        <!-- Scaled Image Container -->
+        <!-- Map Image and Markers Container -->
         <div
           ref="mapContent"
           class="absolute"
@@ -75,7 +75,7 @@
             transition: isDragging ? 'none' : 'transform 0.3s ease-out'
           }"
         >
-          <!-- Background Image - CONTAIN = VOLLES BILD -->
+          <!-- Background Image -->
           <img
             v-if="backgroundImage"
             ref="mapImage"
@@ -94,40 +94,47 @@
             <span class="text-slate-500">Not Found</span>
           </div>
 
-          <!-- Markers - GRÖßE BLEIBT GLEICH -->
-          <NuxtLink
+          <!-- Markers - MIT OPTIMIERTER KOMPENSATION -->
+          <div
             v-for="marker in visibleMarkers"
             :key="marker.id"
-            :to="localePath(`/map/${marker.slug}`)"
-            class="absolute group cursor-pointer hover:z-50 pointer-events-auto"
+            class="absolute"
             :style="{
               left: marker.x + '%',
-              top: marker.y + '%',
-              transform: 'translate(-50%, -50%)'
+              top: marker.y + '%'
             }"
-            @click.stop
           >
-            <div class="relative">
-              <img
-                :src="marker.image"
-                :alt="marker.slug"
-                class="transition-transform duration-200 group-hover:scale-125 drop-shadow-lg select-none"
-                :style="{
-                  width: getMarkerSize(marker) + 'px',
-                  height: 'auto'
-                }"
-                draggable="false"
-              />
+            <NuxtLink
+              :to="localePath(`/map/${marker.slug}`)"
+              class="block group cursor-pointer hover:z-50 pointer-events-auto"
+              :style="{
+                transform: `translate(-50%, -50%) scale(${getMarkerScale()})`,
+                transformOrigin: 'center center'
+              }"
+              @click.stop
+            >
+              <div class="relative">
+                <img
+                  :src="marker.image"
+                  :alt="marker.slug"
+                  class="transition-transform duration-200 group-hover:scale-125 drop-shadow-lg select-none"
+                  :style="{
+                    width: getMarkerSize(marker) + 'px',
+                    height: 'auto'
+                  }"
+                  draggable="false"
+                />
 
-              <!-- Tooltip -->
-              <div
-                v-if="marker.label"
-                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-slate-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg"
-              >
-                {{ $t(`map.${marker.slug}`) }}
+                <!-- Tooltip -->
+                <div
+                  v-if="marker.label"
+                  class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-slate-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg"
+                >
+                  {{ $t(`map.${marker.slug}`) }}
+                </div>
               </div>
-            </div>
-          </NuxtLink>
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -158,11 +165,11 @@ const mapContainer = ref(null)
 const mapContent = ref(null)
 const mapImage = ref(null)
 
-// Display dimensions (base size for contain)
+// Display dimensions (base size)
 const displayWidth = ref(0)
 const displayHeight = ref(0)
 
-// Scaled dimensions (for scroll area)
+// Scaled dimensions (actual size after zoom)
 const scaledWidth = computed(() => displayWidth.value * currentZoom.value)
 const scaledHeight = computed(() => displayHeight.value * currentZoom.value)
 
@@ -171,6 +178,9 @@ const currentZoom = ref(1)
 const minZoom = 1
 const maxZoom = 3
 const zoomStep = 0.25
+
+// Marker scale compensation factor (0 = keine Kompensation, 1 = volle Kompensation)
+const markerScaleFactor = 0.4 // ANPASSEN zwischen 0 und 1!
 
 // Drag state
 const isDragging = ref(false)
@@ -187,12 +197,21 @@ const visibleMarkers = computed(() => {
   return props.markers.filter(marker => marker.image)
 })
 
+// Calculate marker scale with smooth compensation
+const getMarkerScale = () => {
+  // Formula: scale = (1 / currentZoom)^factor
+  // factor = 0: keine Kompensation (Marker zoomen normal mit)
+  // factor = 1: volle Kompensation (Marker bleiben exakt gleich groß)
+  // factor = 0.4: moderate Kompensation (Marker werden etwas kleiner aber nicht zu stark)
+  return Math.pow(1 / currentZoom.value, markerScaleFactor)
+}
+
 // Calculate dimensions - CONTAIN (show full image)
 const calculateDimensions = () => {
   if (!mapImage.value || !mapContainer.value) return
 
   const containerWidth = mapContainer.value.clientWidth
-  const containerHeight = 1200 // Fixed height
+  const containerHeight = 1200
 
   const imageNaturalWidth = mapImage.value.naturalWidth
   const imageNaturalHeight = mapImage.value.naturalHeight
@@ -210,6 +229,7 @@ const calculateDimensions = () => {
     displayWidth.value = containerHeight * imageAspectRatio
   }
 
+  // Reset zoom
   currentZoom.value = minZoom
 }
 
@@ -254,6 +274,7 @@ const adjustScrollForZoom = (oldZoom, newZoom) => {
     const container = mapContainer.value
     const zoomRatio = newZoom / oldZoom
 
+    // Keep zoom centered on viewport center
     const centerX = container.scrollLeft + container.clientWidth / 2
     const centerY = container.scrollTop + container.clientHeight / 2
 
@@ -270,7 +291,7 @@ const resetView = () => {
 // Drag functions
 const startDrag = (e) => {
   if (e.target.tagName === 'A' || (e.target.tagName === 'IMG' && e.target.parentElement.tagName === 'A')) {
-    return
+    return // Don't drag when clicking markers
   }
 
   isDragging.value = true
@@ -316,7 +337,7 @@ const stopDrag = () => {
   isDragging.value = false
 }
 
-// Marker sizing - KOMPENSIERT ZOOM
+// Responsive marker sizing
 const updateScreenSize = () => {
   if (process.client) {
     isMobile.value = window.innerWidth < 768
@@ -327,8 +348,7 @@ const updateScreenSize = () => {
 const getMarkerSize = (marker) => {
   const baseSize = marker.size || 50
   const sizeAdjustment = isMobile.value ? 0.7 : 1
-  // TEILEN durch currentZoom = Marker bleibt gleich groß!
-  return (baseSize / currentZoom.value) * sizeAdjustment
+  return baseSize * sizeAdjustment
 }
 
 // Resize handler
