@@ -14,7 +14,8 @@
 
       <!-- Fliegende Wörter Komponente -->
       <div>
-        <FlyingWords />
+        <!-- <FlyingWords /> -->
+        {{ $t('indexPageTextBlock1') }}
       </div>
 
       <!-- Interaktive Karte -->
@@ -22,7 +23,7 @@
         <InteractiveMap
           :background-image="mapBackground"
           :markers="mapMarkers"
-          :map-height="600"
+          :map-height="1200"
         />
       </div>
 
@@ -39,21 +40,21 @@ const mapBackground = '/images/map-background.jpg' // Passe den Pfad an!
 // size ist in Pixeln
 const mapMarkers = [
   {
-    id: 'marker-1',
-    slug: 'location-1',
-    image: '/images/markers/marker1.png', // Passe den Pfad an!
-    x: 25, // 25% von links
-    y: 40, // 40% von oben
-    size: 60, // 60px breit
+    id: 'dove-on-tree',
+    slug: 'dove',
+    image: '/images/markers/dove.gif', // Passe den Pfad an!
+    x: 70, // 25% von links
+    y: 19, // 40% von oben
+    size: 210, // 60px breit
     label: true // Zeigt Tooltip beim Hover
   },
   {
     id: 'marker-2',
-    slug: 'location-2',
-    image: '/images/markers/marker2.png',
+    slug: 'hedgehog',
+    image: '/images/markers/hedgehog.gif',
     x: 70,
-    y: 30,
-    size: 50,
+    y: 60,
+    size: 100,
     label: true
   }
   // Füge weitere Marker hinzu!

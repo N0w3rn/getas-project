@@ -12,7 +12,7 @@
               Von Natur aufgelöste Grenzen
             </div>
             <div class="text-sm md:text-base font-light text-gray-300 leading-tight">
-              GETAS
+              GTAS
             </div>
           </NuxtLink>
         </div>
@@ -21,7 +21,7 @@
         <div class="hidden lg:flex flex-1 justify-center">
           <div class="text-sm text-gray-300">
             <span class="font-semibold">{{ $t('team') }}:</span>
-            <span class="ml-2">Name 1, Name 2, Name 3, Name 4, Name 5</span>
+            <span class="ml-2">Lara Behnke, Theresa Kerl, Silija Linke</span>
           </div>
         </div>
 
@@ -100,7 +100,7 @@
       <div class="lg:hidden mt-3 pt-3 border-t border-slate-700">
         <div class="text-xs text-gray-400">
           <span class="font-semibold">{{ $t('team') }}:</span>
-          <span class="ml-2">Name 1, Name 2, Name 3, Name 4, Name 5</span>
+          <span class="ml-2">Lara Behnke, Theresa Kerl, Silija Linke</span>
         </div>
       </div>
     </div>
