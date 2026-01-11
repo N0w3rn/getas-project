@@ -42,11 +42,12 @@ const mapMarkers = [
   {
     id: 'dove-on-tree',
     slug: 'dove',
-    image: '/images/markers/dove.gif', // Passe den Pfad an!
-    x: 70, // 25% von links
-    y: 19, // 40% von oben
-    size: 210, // 60px breit
-    label: true // Zeigt Tooltip beim Hover
+    image: '/images/markers/dove.gif',
+    x: 70,
+    y: 19,
+    size: 210,
+    label: true,
+    scaleCompensation: 0.4 // Standard
   },
   {
     id: 'hedgehog-next-to-bush',
@@ -54,9 +55,19 @@ const mapMarkers = [
     image: '/images/markers/hedgehog.gif',
     x: 70,
     y: 60,
-    size: 100,
-    label: true
+    size: 130,
+    label: true,
+    scaleCompensation: 0.4 // Standard
+  },
+  {
+    id: 'waving-man-on-sidewalk',
+    slug: 'wavingman',
+    image: '/images/markers/wavingMan.gif',
+    x: 34,
+    y: 52,
+    size: 90,
+    label: true,
+    scaleCompensation: 0 // ← HÖHER für mehr Konstanz!
   }
-  // Füge weitere Marker hinzu!
 ]
 </script>

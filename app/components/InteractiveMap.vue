@@ -94,7 +94,7 @@
             <span class="text-slate-500">Not Found</span>
           </div>
 
-          <!-- Markers - MIT OPTIMIERTER KOMPENSATION -->
+          <!-- Markers - MIT MARKER-SPEZIFISCHER KOMPENSATION -->
           <div
             v-for="marker in visibleMarkers"
             :key="marker.id"
@@ -108,7 +108,7 @@
               :to="localePath(`/map/${marker.slug}`)"
               class="block group cursor-pointer hover:z-50 pointer-events-auto"
               :style="{
-                transform: `translate(-50%, -50%) scale(${getMarkerScale()})`,
+                transform: `translate(-50%, -50%) scale(${getMarkerScale(marker)})`,
                 transformOrigin: 'center center'
               }"
               @click.stop
@@ -180,7 +180,7 @@ const maxZoom = 3
 const zoomStep = 0.25
 
 // Marker scale compensation factor (0 = keine Kompensation, 1 = volle Kompensation)
-const markerScaleFactor = 0.4 // ANPASSEN zwischen 0 und 1!
+const markerScaleFactor = 0.4 // Default fallback
 
 // Drag state
 const isDragging = ref(false)
@@ -197,13 +197,16 @@ const visibleMarkers = computed(() => {
   return props.markers.filter(marker => marker.image)
 })
 
-// Calculate marker scale with smooth compensation
-const getMarkerScale = () => {
+// Calculate marker scale with smooth compensation (per marker!)
+const getMarkerScale = (marker) => {
+  // Use marker-specific compensation or fallback to default
+  const factor = marker?.scaleCompensation !== undefined ? marker.scaleCompensation : markerScaleFactor
+  
   // Formula: scale = (1 / currentZoom)^factor
   // factor = 0: keine Kompensation (Marker zoomen normal mit)
   // factor = 1: volle Kompensation (Marker bleiben exakt gleich groß)
-  // factor = 0.4: moderate Kompensation (Marker werden etwas kleiner aber nicht zu stark)
-  return Math.pow(1 / currentZoom.value, markerScaleFactor)
+  // factor = 0.4-0.6: moderate Kompensation
+  return Math.pow(1 / currentZoom.value, factor)
 }
 
 // Calculate dimensions - CONTAIN (show full image)
@@ -347,7 +350,7 @@ const updateScreenSize = () => {
 
 const getMarkerSize = (marker) => {
   const baseSize = marker.size || 50
-  const sizeAdjustment = isMobile.value ? 0.7 : 1
+  const sizeAdjustment = isMobile.value ? 0.4 : 1
   return baseSize * sizeAdjustment
 }
 
