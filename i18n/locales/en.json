@@ -3,15 +3,18 @@
   "description": "WIP Page as an example",
   "team": "Team",
   "back": "Back",
-  "indexPageTextBlock1": "The seminar project examines a seemingly unspectacular location: the private parking lot of a newly built residential complex. The starting point is the book Field Guide to the Patchy Anthropocene by Anna Tsing, Anna Lowenhaupt Tsing, and others, which understands the concept of the Anthropocene not as a homogeneous state, but as a structure of fragmented, asynchronously formed “patches.” These patches are spatial, social, and ecological segments in which human interventions, natural processes, and their consequences visibly intersect. Methodologically, we work by breaking down the location into different patches: functional, material, temporal, and ecological. These are analyzed, mapped, and linked together narratively. In order to make the complex interrelationships understandable and accessible, the project is implemented visually and narratively. Animations show processes such as growth, displacement, or runoff over time, while a short fictional story shifts perspectives—for example, to non-human actors such as plants, water, or heat. The project thus sees itself as a translation between theory, place, and perception, making the hidden dynamics of an everyday space in the patchy Anthropocene tangible. Translated with DeepL.com (free version)",
-  "map": {
-    "location-1": "Location 1",
-    "location-2": "Location 2",
-    "location-1_content": "Information about Location 1...",
-    "location-2_content": "Information about Location 2...",
-    "zoom_in": "Zoom In",
-    "zoom_out": "Zoom Out",
-    "reset": "Reset"
+  "indexPageTextBlock1": {
+    "intro": "The seminar project examines a seemingly unspectacular location: the private parking lot of a newly built residential complex. The starting point is the book Field Guide to the Patchy Anthropocene by Anna Tsing, Anna Lowenhaupt Tsing, and others, which understands the concept of the Anthropocene not as a homogeneous state, but as a structure of fragmented, asynchronously formed 'patches.'",
+    "method": "These patches are spatial, social, and ecological segments in which human interventions, natural processes, and their consequences visibly intersect. Methodologically, we work by breaking down the location into different patches: functional, material, temporal, and ecological. These are analyzed, mapped, and linked together narratively.",
+    "implementation": "In order to make the complex interrelationships understandable and accessible, the project is implemented visually and narratively. Animations show processes such as growth, displacement, or runoff over time, while a short fictional story shifts perspectives—for example, to non-human actors such as plants, water, or heat. The project thus sees itself as a translation between theory, place, and perception, making the hidden dynamics of an everyday space in the patchy Anthropocene tangible."
+  },
+  "markers": {
+    "smokingManDescription": "Jonas smokes like 28% of all Germans.",
+    "dove": {
+      "title": "Tabea takes off.",
+      "description1": "She wants to build a nest for the very first time—but no one has shown her how.",
+      "description2": "What actually belongs in a nest?"
+    }
   },
   "words": {
     "freedom": "Freedom",

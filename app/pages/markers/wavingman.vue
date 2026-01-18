@@ -15,14 +15,14 @@
           <img 
             src="/images/sides/smokingMan.gif" 
             alt="Jonas raucht"
-            class="w-40 h-auto md:w-60 xl:w-[20rem] drop-shadow-2xl"
+            class="w-40 h-auto md:w-60 xl:w-[16rem] drop-shadow-2xl"
           />
         </NuxtLink>
 
         <!-- Text unter dem Mann -->
         <div class="text-center mb-8 md:mb-12 max-w-2xl mt-12">
           <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 leading-tight">
-            Jonas raucht wie 28% aller Deutschen
+            {{ $t('markers.smokingManDescription') }}
           </h1>
         </div>
 
@@ -44,9 +44,5 @@ const localePath = useLocalePath()
   50% {
     transform: translateY(-20px);
   }
-}
-
-.hover\:scale-110:hover img {
-  animation: float 2s ease-in-out infinite;
 }
 </style>

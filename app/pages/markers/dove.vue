@@ -13,13 +13,13 @@
         <!-- Text über der Taube -->
         <div class="text-center mb-8 md:mb-12 max-w-2xl">
           <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 leading-tight">
-            Tabea fliegt los.
+            {{ $t('markers.dove.title') }}
           </h1>
           <p class="text-base md:text-lg lg:text-xl text-black leading-relaxed">
-            Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht.
+            {{ $t('markers.dove.description1') }}
           </p>
           <p class="text-base md:text-lg lg:text-xl text-black leading-relaxed mt-2">
-            Was gehört eigentlich zu einem Nest?
+            {{ $t('markers.dove.description2') }}
           </p>
         </div>
 
