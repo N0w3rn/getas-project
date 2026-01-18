@@ -10,23 +10,23 @@
           {{ $t('description') }}
         </p>
       </div>
-
+      
       <div class="relative w-full bg-white rounded-lg shadow-lg overflow-hidden p-6 font-semibold">
         {{ $t('indexPageTextBlock1') }}
       </div>
-
-      <InteractiveMap 
-        :background-image="mapBackground"
-        :markers="mapMarkers"
+      
+      <InteractiveImage 
+        :background-image="sceneBackground"
+        :markers="sceneMarkers"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-const mapBackground = '/images/map-background.jpg'
+const sceneBackground = '/images/scene-background.jpg'
 
-const mapMarkers = [
+const sceneMarkers = [
   {
     id: 'dove-on-tree',
     slug: 'dove',

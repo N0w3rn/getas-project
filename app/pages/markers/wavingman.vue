@@ -1,16 +1,13 @@
 <template>
   <PageWrapper>
     <div class="relative min-h-screen w-full overflow-hidden">
-      <!-- Straßen Hintergrund -->
       <div 
         class="absolute inset-0 bg-cover bg-center"
-        :style="{ backgroundImage: `url('/images/map-background.jpg')` }"
+        :style="{ backgroundImage: `url('/images/scene-background.jpg')` }"
       ></div>
 
-      <!-- Content Container -->
       <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
         
-        <!-- Anklickbarer Mann -->
         <NuxtLink 
           :to="localePath('/subside/smoking-next')"
           class="ml-12 mt-[24vh] block transform hover:scale-110 transition-transform duration-300 cursor-pointer"

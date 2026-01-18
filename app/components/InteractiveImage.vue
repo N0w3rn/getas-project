@@ -38,7 +38,6 @@
         </div>
       </div>
 
-      <!-- Map Container with custom scrollbar -->
       <div 
         class="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-b-lg custom-scrollbar"
         :class="{ 'overflow-auto': currentZoom > 1 }"
@@ -70,7 +69,7 @@
               <NuxtLink
                 v-for="marker in markers"
                 :key="marker.id"
-                :to="localePath('/map/' + marker.slug)"
+                :to="localePath('/markers/' + marker.slug)"
                 class="absolute group cursor-pointer hover:z-10 transition-transform duration-200 hover:scale-110"
                 :style="{
                   left: marker.x + '%',
@@ -208,7 +207,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
   height: 8px;
