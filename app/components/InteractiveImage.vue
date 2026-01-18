@@ -1,7 +1,10 @@
 <template>
   <div class="w-full">
     <div class="mx-auto" style="max-width: 800px;">
-      <div class="bg-white border border-gray-200 p-2 flex items-center justify-between rounded-t-lg shadow-sm">
+      <div 
+        v-if="enableZoom"
+        class="bg-white border border-gray-200 p-2 flex items-center justify-between rounded-t-lg shadow-sm"
+      >
         <div class="flex gap-1">
           <button
             @click="zoomIn"
@@ -39,9 +42,13 @@
       </div>
 
       <div 
-        class="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-b-lg custom-scrollbar"
-        :class="{ 'overflow-auto': currentZoom > 1 }"
-        :style="currentZoom > 1 ? { maxHeight: isMobile ? '60vh' : '80vh' } : {}"
+        class="relative bg-gradient-to-br from-gray-50 to-gray-100 custom-scrollbar"
+        :class="{ 
+          'overflow-auto': enableZoom && currentZoom > 1,
+          'rounded-b-lg': enableZoom,
+          'rounded-lg': !enableZoom
+        }"
+        :style="(enableZoom && currentZoom > 1) ? { maxHeight: isMobile ? '60vh' : '80vh' } : {}"
       >
         <div 
           v-if="!allImagesLoaded"
@@ -55,7 +62,7 @@
           <div
             class="relative origin-top-left transition-transform duration-300"
             :style="{
-              transform: `scale(${currentZoom})`,
+              transform: enableZoom ? `scale(${currentZoom})` : 'scale(1)',
               transformOrigin: 'top left'
             }"
           >
@@ -69,7 +76,7 @@
               <NuxtLink
                 v-for="marker in markers"
                 :key="marker.id"
-                :to="localePath('/markers/' + marker.slug)"
+                :to="localePath(marker.link || `/markers/${marker.slug}`)"
                 class="absolute group cursor-pointer hover:z-10"
                 :style="{
                   left: marker.x + '%',
@@ -105,6 +112,10 @@ const props = defineProps({
   markers: {
     type: Array,
     default: () => []
+  },
+  enableZoom: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -172,19 +183,21 @@ const getMarkerSize = (marker) => {
 }
 
 const zoomIn = () => {
-  if (currentZoom.value < maxZoom) {
+  if (props.enableZoom && currentZoom.value < maxZoom) {
     currentZoom.value = Math.min(currentZoom.value + zoomStep, maxZoom)
   }
 }
 
 const zoomOut = () => {
-  if (currentZoom.value > minZoom) {
+  if (props.enableZoom && currentZoom.value > minZoom) {
     currentZoom.value = Math.max(currentZoom.value - zoomStep, minZoom)
   }
 }
 
 const resetZoom = () => {
-  currentZoom.value = minZoom
+  if (props.enableZoom) {
+    currentZoom.value = minZoom
+  }
 }
 
 onMounted(() => {
