@@ -16,7 +16,6 @@
 const doveMarker = [
   {
     id: 'dove-on-fence',
-    slug: 'dove-sitting-on-fence',
     link: '/subside/dove-chill',
     image: '/images/markers/dove.gif',
     x: 50,

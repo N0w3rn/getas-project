@@ -16,7 +16,6 @@
 const doveMarker = [
   {
     id: 'dove-chill',
-    slug: 'dove-chill',
     link: '/subside/dove-chill',
     image: '/images/sides/shitting-dove.gif',
     x: 54,
