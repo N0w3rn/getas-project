@@ -1,57 +1,57 @@
 <template>
   <div class="w-full">
     <div class="mx-auto" style="max-width: 800px;">
-      <!-- Zoom Controls -->
-      <div class="bg-slate-100 p-3 flex items-center justify-between border-b border-slate-200 rounded-t-lg">
-        <div class="flex gap-2">
+      <div class="bg-white border border-gray-200 p-2 flex items-center justify-between rounded-t-lg shadow-sm">
+        <div class="flex gap-1">
           <button
             @click="zoomIn"
             :disabled="currentZoom >= maxZoom"
-            class="px-3 py-2 bg-slate-700 text-white rounded hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition"
+            class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition"
+            title="Zoom In"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
           </button>
           <button
             @click="zoomOut"
             :disabled="currentZoom <= minZoom"
-            class="px-3 py-2 bg-slate-700 text-white rounded hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition"
+            class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition"
+            title="Zoom Out"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
           </button>
           <button
             @click="resetZoom"
-            class="px-3 py-2 bg-slate-700 text-white rounded hover:bg-slate-600 transition"
+            class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded transition"
+            title="Reset"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
           </button>
         </div>
-        <div class="text-sm text-slate-600">
-          Zoom: {{ Math.round(currentZoom * 100) }}%
+        <div class="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+          {{ Math.round(currentZoom * 100) }}%
         </div>
       </div>
 
-      <!-- Map Container - Scrollbar nur bei Zoom -->
+      <!-- Map Container with custom scrollbar -->
       <div 
-        class="relative bg-slate-50 rounded-b-lg"
+        class="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-b-lg custom-scrollbar"
         :class="{ 'overflow-auto': currentZoom > 1 }"
         :style="currentZoom > 1 ? { maxHeight: isMobile ? '60vh' : '80vh' } : {}"
       >
-        <!-- Loading State -->
         <div 
           v-if="!allImagesLoaded"
-          class="w-full bg-gray-200 flex items-center justify-center"
+          class="w-full bg-gray-100 flex items-center justify-center"
           :style="{ height: '600px' }"
         >
-          <div class="text-gray-500 text-lg">Loading...</div>
+          <div class="text-gray-400 text-sm">Loading...</div>
         </div>
 
-        <!-- Alles auf einmal anzeigen wenn fertig geladen -->
         <div v-show="allImagesLoaded" class="relative inline-block min-w-full">
           <div
             class="relative origin-top-left transition-transform duration-300"
@@ -116,7 +116,6 @@ const bgImage = ref(null)
 const imageWidth = ref(0)
 const isMobile = ref(false)
 
-// Zoom State
 const currentZoom = ref(1)
 const minZoom = 1
 const maxZoom = 3
@@ -167,14 +166,12 @@ const updateImageWidth = () => {
   }
 }
 
-// Marker-Größe: Skaliert proportional mit dem Bild
 const getMarkerSize = (marker) => {
   const baseSize = marker.size || 60
   const scaleFactor = imageWidth.value / 600
   return baseSize * scaleFactor
 }
 
-// Zoom Functions
 const zoomIn = () => {
   if (currentZoom.value < maxZoom) {
     currentZoom.value = Math.min(currentZoom.value + zoomStep, maxZoom)
@@ -209,3 +206,25 @@ onUnmounted(() => {
   }
 })
 </script>
+
+<style scoped>
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+</style>
