@@ -70,7 +70,7 @@
                 v-for="marker in markers"
                 :key="marker.id"
                 :to="localePath('/markers/' + marker.slug)"
-                class="absolute group cursor-pointer hover:z-10 transition-transform duration-200 hover:scale-110"
+                class="absolute group cursor-pointer hover:z-10"
                 :style="{
                   left: marker.x + '%',
                   top: marker.y + '%',
@@ -80,7 +80,7 @@
                 <img
                   :src="marker.image"
                   :alt="marker.slug"
-                  class="block drop-shadow-lg select-none"
+                  class="block drop-shadow-lg select-none transform hover:scale-110 transition-transform duration-300 cursor-pointer"
                   :style="{
                     width: getMarkerSize(marker) + 'px',
                     height: 'auto'
