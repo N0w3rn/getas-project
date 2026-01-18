@@ -15,7 +15,7 @@
           <img 
             src="/images/sides/smokingMan.gif" 
             alt="Jonas raucht"
-            class="w-40 h-auto md:w-80 lg:w-96 xl:w-[28rem] drop-shadow-2xl"
+            class="w-40 h-auto md:w-60 xl:w-[20rem] drop-shadow-2xl"
           />
         </NuxtLink>
 
