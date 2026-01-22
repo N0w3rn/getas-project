@@ -13,11 +13,11 @@
 const doveMarker = [
   {
     id: 'dove-chill',
-    link: '/subside/splash',
-    image: '/images/sides/shitting-dove.gif',
-    x: 54,
-    y: 44.5,
-    size: 200,
+    link: '/subside/dove-hungry',
+    image: '/images/sides/hungry-dove.gif',
+    x: 59,
+    y: 33.5,
+    size: 400,
     label: false
   }
 ]

@@ -4,6 +4,7 @@
           background-image="/images/bg/splash-background.png"
           :markers="doveMarker"
           fill-viewport
+          background-color="#FFFFFF"
         />
   </PageWrapper>
 </template>
@@ -12,7 +13,7 @@
 const doveMarker = [
   {
     id: 'dove-chill',
-    link: '/subside/...',
+    link: '/subside/dove-hungry',
     image: '/images/sides/splash.gif',
     x: 54,
     y: 51,
