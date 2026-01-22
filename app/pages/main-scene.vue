@@ -1,13 +1,9 @@
 <template>
     <PageWrapper>
-        <div class="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-4 py-12">
-            <div class="w-full max-w-7xl">
-                <InteractiveImage 
-                    :background-image="sceneBackground"
-                    :markers="sceneMarkers"
-                />
-            </div>
-        </div>
+      <InteractiveImage 
+          :background-image="sceneBackground"
+          :markers="sceneMarkers"
+      />
     </PageWrapper>
 </template>
 
@@ -17,7 +13,7 @@ const sceneBackground = '/images/bg/scene-background.jpg'
 const sceneMarkers = [
   {
     id: 'dove-on-tree',
-    slug: 'dove',
+    link: '/subside/dove',
     image: '/images/markers/dove.gif',
     x: 70,
     y: 19,
@@ -27,6 +23,7 @@ const sceneMarkers = [
   {
     id: 'hedgehog-next-to-bush',
     slug: 'hedgehog',
+    link: '/subside/hedgehog',
     image: '/images/markers/hedgehog.gif',
     x: 70,
     y: 60,
@@ -36,6 +33,7 @@ const sceneMarkers = [
   {
     id: 'waving-man-on-sidewalk',
     slug: 'wavingman',
+    link: '/subside/wavingman',
     image: '/images/markers/wavingMan.gif',
     x: 34,
     y: 52,

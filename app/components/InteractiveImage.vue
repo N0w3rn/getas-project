@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="mx-auto" :style="fullscreen ? {} : { maxWidth: '800px' }">
+    <div class="mx-auto" :style="fullscreen ? {} : { maxWidth: maxWidth }">
       <div 
         v-if="enableZoom"
         class="bg-white border border-gray-200 p-2 flex items-center justify-between rounded-t-lg shadow-sm"
@@ -180,10 +180,12 @@ const props = withDefaults(defineProps<{
   markers?: Marker[]
   enableZoom?: boolean
   fullscreen?: boolean
+  maxWidth?: string
 }>(), {
   markers: () => [],
   enableZoom: false,
-  fullscreen: false
+  fullscreen: false,
+  maxWidth: '100%'
 })
 
 const localePath = useLocalePath()

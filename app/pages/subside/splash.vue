@@ -1,14 +1,12 @@
 <template>
   <PageWrapper>
-    <div class="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-4 py-12">
-      <div class="w-full max-w-7xl">
+      <div class="mt-40 lg:mt-0">
         <InteractiveImage 
           background-image="/images/bg/splash-background.png"
           :markers="doveMarker"
           :enable-zoom="false"
         />
       </div>
-    </div>
   </PageWrapper>
 </template>
 
