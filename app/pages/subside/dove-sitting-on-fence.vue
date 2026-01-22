@@ -3,7 +3,8 @@
       <InteractiveImage 
         background-image="/images/bg/scene2-background.jpg"
         :markers="doveMarker"
-        :enable-zoom="false"
+        fill-viewport
+        background-color="#5B9647"
       />
   </PageWrapper>
 </template>

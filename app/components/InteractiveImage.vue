@@ -1,5 +1,9 @@
 <template>
-  <div class="w-full">
+  <div 
+    class="w-full"
+    :class="fillViewport ? 'min-h-screen flex items-center justify-center' : ''"
+    :style="fillViewport ? { backgroundColor: backgroundColor } : {}"
+  >
     <div class="mx-auto" :style="fullscreen ? {} : { maxWidth: maxWidth }">
       <div 
         v-if="enableZoom"
@@ -42,7 +46,7 @@
       </div>
 
       <div 
-        class="relative bg-gradient-to-br from-gray-50 to-gray-100 custom-scrollbar"
+        class="relative custom-scrollbar"
         :class="{ 
           'overflow-auto': enableZoom && currentZoom > 1,
           'rounded-b-lg': enableZoom,
@@ -52,7 +56,7 @@
       >
         <div 
           v-if="!allImagesLoaded"
-          class="w-full bg-gray-100 flex items-center justify-center"
+          class="w-full flex items-center justify-center"
           :style="{ height: fullscreen ? '100vh' : '600px' }"
         >
           <div class="text-gray-400 text-sm">Loading...</div>
@@ -181,11 +185,15 @@ const props = withDefaults(defineProps<{
   enableZoom?: boolean
   fullscreen?: boolean
   maxWidth?: string
+  fillViewport?: boolean
+  backgroundColor?: string
 }>(), {
   markers: () => [],
   enableZoom: false,
   fullscreen: false,
-  maxWidth: '100%'
+  maxWidth: '100%',
+  fillViewport: false,
+  backgroundColor: '#f5f5f0'
 })
 
 const localePath = useLocalePath()

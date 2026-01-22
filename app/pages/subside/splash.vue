@@ -1,12 +1,10 @@
 <template>
   <PageWrapper>
-      <div class="mt-40 lg:mt-0">
         <InteractiveImage 
           background-image="/images/bg/splash-background.png"
           :markers="doveMarker"
-          :enable-zoom="false"
+          fill-viewport
         />
-      </div>
   </PageWrapper>
 </template>
 

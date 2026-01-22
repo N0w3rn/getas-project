@@ -1,10 +1,12 @@
 <template>
-    <PageWrapper>
-      <InteractiveImage 
-          :background-image="sceneBackground"
-          :markers="sceneMarkers"
-      />
-    </PageWrapper>
+  <PageWrapper>
+    <InteractiveImage 
+      :background-image="sceneBackground"
+      :markers="sceneMarkers"
+      fill-viewport
+      background-color="#e8dcc8"
+    />
+  </PageWrapper>
 </template>
 
 <script setup>

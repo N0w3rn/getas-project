@@ -3,7 +3,7 @@
         <InteractiveImage 
           background-image="/images/bg/tree-background.jpg"
           :markers="doveMarker"
-          :enable-zoom="false"
+          fill-viewport
         />
   </PageWrapper>
 </template>

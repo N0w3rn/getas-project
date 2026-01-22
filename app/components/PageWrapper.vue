@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen">
+  <div class="relative">
     <button
       @click="goBack"
       class="fixed top-4 left-4 md:top-5 md:left-5 lg:top-6 lg:left-6 z-50 p-2 md:p-2.5 lg:p-3 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
