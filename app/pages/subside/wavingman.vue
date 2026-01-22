@@ -9,7 +9,7 @@
       <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
         
         <NuxtLink 
-          :to="localePath('/subside/smoking-next')"
+          :to="localePath('/subside/man-in-bed')"
           class="ml-12 mt-[24vh] block transform hover:scale-110 transition-transform duration-300 cursor-pointer"
         >
           <img 
@@ -19,7 +19,6 @@
           />
         </NuxtLink>
 
-        <!-- Text unter dem Mann -->
         <div class="text-center mb-8 md:mb-12 max-w-2xl mt-12">
           <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 leading-tight">
             {{ $t('markers.smokingManDescription') }}
