@@ -96,6 +96,7 @@
                       width: getMarkerSize(marker) + 'px',
                       height: 'auto'
                     }"
+                    style="max-width: none !important; max-height: none !important;"
                     draggable="false"
                   />
                 </NuxtLink>
@@ -117,6 +118,7 @@
                       width: getMarkerSize(marker) + 'px',
                       height: 'auto'
                     }"
+                    style="max-width: none !important; max-height: none !important;"
                     draggable="false"
                   />
                 </div>

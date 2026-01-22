@@ -16,8 +16,8 @@ const doveMarker = [
     link: '/subside/cigarette',
     image: '/images/sides/dove-sitting-fence.gif',
     x: 50,
-    y: 20,
-    size: 400,
+    y: 16,
+    size: 650,
     label: false
   }
 ]
