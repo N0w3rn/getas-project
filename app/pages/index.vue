@@ -11,27 +11,22 @@
         </p>
       </div>
       
-      <div class="relative w-full bg-white rounded-lg shadow-lg overflow-hidden p-6 space-y-4">
-        <p class="text-gray-700 leading-relaxed">
-          {{ $t('indexPageTextBlock1.intro') }}
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          {{ $t('indexPageTextBlock1.method') }}
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          {{ $t('indexPageTextBlock1.implementation') }}
-        </p>
-      </div>
-      
       <InteractiveImage 
         :background-image="sceneBackground"
         :markers="sceneMarkers"
+      />
+
+      <InitialModal 
+        v-model="showModal"
+        @close="closeModal"
       />
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+const { showModal, checkAndShowModal, closeModal } = useWelcomeModal(15)
+
 const sceneBackground = '/images/bg/map.jpg'
 
 const sceneMarkers = [
@@ -45,4 +40,8 @@ const sceneMarkers = [
     label: true
   }
 ]
+
+onMounted(() => {
+  checkAndShowModal()
+})
 </script>
