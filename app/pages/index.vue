@@ -32,12 +32,12 @@
 </template>
 
 <script setup>
-const sceneBackground = '/images/map.jpg'
+const sceneBackground = '/images/bg/map.jpg'
 
 const sceneMarkers = [
   {
     id: 'main-scene-marker',
-    slug: 'main-scene',
+    link: 'main-scene',
     image: '/images/markers/marker-plan1.gif',
     x: 36,
     y: 25,

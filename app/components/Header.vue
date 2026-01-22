@@ -21,7 +21,7 @@
         <div class="hidden lg:flex flex-1 justify-center">
           <div class="text-sm text-gray-300">
             <span class="font-semibold">{{ $t('team') }}:</span>
-            <span class="ml-2">Lara Behnke, Theresa Kerl, Silija Linke</span>
+            <span class="ml-2">Lara Behnke, Theresa Kerl, Silja Linke</span>
           </div>
         </div>
 

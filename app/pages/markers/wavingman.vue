@@ -3,7 +3,7 @@
     <div class="relative min-h-screen w-full overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center"
-        :style="{ backgroundImage: `url('/images/scene-background.jpg')` }"
+        :style="{ backgroundImage: `url('/images/bg/scene-background.jpg')` }"
       ></div>
 
       <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
