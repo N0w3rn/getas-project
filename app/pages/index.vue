@@ -1,16 +1,6 @@
 <template>
   <div class="container mx-auto px-4 py-12">
     <div class="max-w-6xl mx-auto space-y-8">
-      
-      <div class="bg-white rounded-lg shadow-xl p-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">
-          {{ $t('welcome') }}
-        </h1>
-        <p class="text-gray-600 text-lg">
-          {{ $t('description') }}
-        </p>
-      </div>
-      
       <InteractiveImage 
         :background-image="sceneBackground"
         :markers="sceneMarkers"
