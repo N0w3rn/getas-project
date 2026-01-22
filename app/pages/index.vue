@@ -1,26 +1,22 @@
 <template>
-  <div class="container mx-auto px-4 py-12">
-    <div class="max-w-6xl mx-auto space-y-8">
-      
-      <div class="bg-white rounded-lg shadow-xl p-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">
-          {{ $t('welcome') }}
-        </h1>
-        <p class="text-gray-600 text-lg">
-          {{ $t('description') }}
-        </p>
-      </div>
-      
-      <InteractiveImage 
-        :background-image="sceneBackground"
-        :markers="sceneMarkers"
-      />
+  <div class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-grow" style="background-color: #e8e4db;">
+      <div class="my-12">
+        <div>
+          <InteractiveImage 
+            :background-image="sceneBackground"
+            :markers="sceneMarkers"
+          />
 
-      <InitialModal 
-        v-model="showModal"
-        @close="closeModal"
-      />
-    </div>
+          <InitialModal 
+            v-model="showModal"
+            @close="closeModal"
+          />
+        </div>
+      </div>
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -32,7 +28,7 @@ const sceneBackground = '/images/bg/map.jpg'
 const sceneMarkers = [
   {
     id: 'main-scene-marker',
-    link: 'main-scene',
+    link: '/main-scene',
     image: '/images/markers/marker-plan1.gif',
     x: 36,
     y: 25,

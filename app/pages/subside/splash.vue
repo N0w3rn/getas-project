@@ -1,14 +1,11 @@
 <template>
   <PageWrapper>
-    <div class="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-4 py-12">
-      <div class="w-full max-w-7xl">
         <InteractiveImage 
           background-image="/images/bg/splash-background.png"
           :markers="doveMarker"
-          :enable-zoom="false"
+          fill-viewport
+          background-color="#FFFFFF"
         />
-      </div>
-    </div>
   </PageWrapper>
 </template>
 
@@ -16,7 +13,7 @@
 const doveMarker = [
   {
     id: 'dove-chill',
-    link: '/subside/...',
+    link: '/subside/dove-hungry',
     image: '/images/sides/splash.gif',
     x: 54,
     y: 51,

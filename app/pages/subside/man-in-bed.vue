@@ -1,10 +1,10 @@
 <template>
   <PageWrapper>
         <InteractiveImage 
-          background-image="/images/bg/tree-background.jpg"
+          background-image="/images/bg/bedroom-background.png"
           :markers="doveMarker"
           fill-viewport
-          background-color="#FFFFFF"
+          background-color="#BAB1AA"
         />
   </PageWrapper>
 </template>
@@ -13,11 +13,11 @@
 const doveMarker = [
   {
     id: 'dove-chill',
-    link: '/subside/splash',
-    image: '/images/sides/shitting-dove.gif',
-    x: 54,
-    y: 44.5,
-    size: 200,
+    link: '/subside/man-in-bed',
+    image: '/images/sides/TiredMan.gif',
+    x: 69,
+    y: 37.6,
+    size: 150,
     label: false
   }
 ]

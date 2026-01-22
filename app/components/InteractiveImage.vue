@@ -1,6 +1,10 @@
 <template>
-  <div class="w-full">
-    <div class="mx-auto" style="max-width: 800px;">
+  <div 
+    class="w-full"
+    :class="fillViewport ? 'min-h-screen flex items-center justify-center' : ''"
+    :style="fillViewport ? { backgroundColor: backgroundColor } : {}"
+  >
+    <div class="mx-auto" :style="fullscreen ? {} : { maxWidth: maxWidth }">
       <div 
         v-if="enableZoom"
         class="bg-white border border-gray-200 p-2 flex items-center justify-between rounded-t-lg shadow-sm"
@@ -42,7 +46,7 @@
       </div>
 
       <div 
-        class="relative bg-gradient-to-br from-gray-50 to-gray-100 custom-scrollbar"
+        class="relative custom-scrollbar"
         :class="{ 
           'overflow-auto': enableZoom && currentZoom > 1,
           'rounded-b-lg': enableZoom,
@@ -52,8 +56,8 @@
       >
         <div 
           v-if="!allImagesLoaded"
-          class="w-full bg-gray-100 flex items-center justify-center"
-          :style="{ height: '600px' }"
+          class="w-full flex items-center justify-center"
+          :style="{ height: fullscreen ? '100vh' : '600px' }"
         >
           <div class="text-gray-400 text-sm">Loading...</div>
         </div>
@@ -73,28 +77,81 @@
               class="w-full h-auto block"
             />
             <div class="absolute inset-0">
-              <NuxtLink
-                v-for="marker in markers"
-                :key="marker.id"
-                :to="localePath(marker.link || `/markers/${marker.slug}`)"
-                class="absolute group cursor-pointer hover:z-10"
-                :style="{
-                  left: marker.x + '%',
-                  top: marker.y + '%',
-                  transform: 'translate(-50%, -50%)'
-                }"
-              >
-                <img
-                  :src="marker.image"
-                  :alt="marker.slug"
-                  class="block drop-shadow-lg select-none transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+              <template v-for="marker in markers" :key="marker.id">
+                <NuxtLink
+                  v-if="marker.type !== 'html' && marker.link"
+                  :to="localePath(marker.link)"
+                  class="absolute group cursor-pointer hover:z-10"
                   :style="{
-                    width: getMarkerSize(marker) + 'px',
-                    height: 'auto'
+                    left: marker.x + '%',
+                    top: marker.y + '%',
+                    transform: 'translate(-50%, -50%)'
                   }"
-                  draggable="false"
-                />
-              </NuxtLink>
+                >
+                  <img
+                    :src="marker.image"
+                    :alt="marker.slug || marker.id"
+                    class="block drop-shadow-lg select-none transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    :style="{
+                      width: getMarkerSize(marker) + 'px',
+                      height: 'auto'
+                    }"
+                    style="max-width: none !important; max-height: none !important;"
+                    draggable="false"
+                  />
+                </NuxtLink>
+
+                <div
+                  v-else-if="marker.type !== 'html' && !marker.link"
+                  class="absolute group"
+                  :style="{
+                    left: marker.x + '%',
+                    top: marker.y + '%',
+                    transform: 'translate(-50%, -50%)'
+                  }"
+                >
+                  <img
+                    :src="marker.image"
+                    :alt="marker.slug || marker.id"
+                    class="block drop-shadow-lg select-none"
+                    :style="{
+                      width: getMarkerSize(marker) + 'px',
+                      height: 'auto'
+                    }"
+                    style="max-width: none !important; max-height: none !important;"
+                    draggable="false"
+                  />
+                </div>
+
+                <div
+                  v-else-if="marker.type === 'html'"
+                  class="absolute"
+                  :style="{
+                    left: marker.x + '%',
+                    top: marker.y + '%',
+                    transform: 'translate(-50%, -50%)',
+                    width: marker.width ? marker.width + 'px' : 'auto',
+                    maxWidth: marker.maxWidth ? marker.maxWidth + 'px' : 'none'
+                  }"
+                >
+                  <component 
+                    v-if="marker.component" 
+                    :is="marker.component"
+                    v-bind="marker.props || {}"
+                  />
+                  <div 
+                    v-else-if="marker.html"
+                    v-html="marker.html"
+                    class="drop-shadow-lg"
+                  />
+                  <div
+                    v-else-if="marker.content"
+                    class="drop-shadow-lg"
+                  >
+                    {{ marker.content }}
+                  </div>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -103,26 +160,48 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  backgroundImage: {
-    type: String,
-    required: true
-  },
-  markers: {
-    type: Array,
-    default: () => []
-  },
-  enableZoom: {
-    type: Boolean,
-    default: true
-  }
+<script setup lang="ts">
+import type { Component } from 'vue'
+
+interface Marker {
+  id: string
+  type?: 'image' | 'html'
+  link?: string
+  image?: string
+  html?: string
+  content?: string
+  component?: Component
+  props?: Record<string, any>
+  x: number
+  y: number
+  size?: number
+  width?: number
+  maxWidth?: number
+  slug?: string
+  label?: boolean
+}
+
+const props = withDefaults(defineProps<{
+  backgroundImage: string
+  markers?: Marker[]
+  enableZoom?: boolean
+  fullscreen?: boolean
+  maxWidth?: string
+  fillViewport?: boolean
+  backgroundColor?: string
+}>(), {
+  markers: () => [],
+  enableZoom: false,
+  fullscreen: false,
+  maxWidth: '100%',
+  fillViewport: false,
+  backgroundColor: '#f5f5f0'
 })
 
 const localePath = useLocalePath()
 
 const allImagesLoaded = ref(false)
-const bgImage = ref(null)
+const bgImage = ref<HTMLImageElement | null>(null)
 const imageWidth = ref(0)
 const isMobile = ref(false)
 
@@ -132,7 +211,7 @@ const maxZoom = 3
 const zoomStep = 0.25
 
 const checkMobile = () => {
-  if (process.client) {
+  if (import.meta.client) {
     isMobile.value = window.innerWidth < 768
   }
 }
@@ -140,11 +219,18 @@ const checkMobile = () => {
 const preloadImages = () => {
   const imagesToLoad = [
     props.backgroundImage,
-    ...props.markers.map(m => m.image)
+    ...props.markers
+      .filter(m => m.type !== 'html' && m.image)
+      .map(m => m.image!)
   ]
 
   let loadedCount = 0
   const totalImages = imagesToLoad.length
+
+  if (totalImages === 0) {
+    allImagesLoaded.value = true
+    return
+  }
 
   imagesToLoad.forEach(src => {
     const img = new Image()
@@ -176,7 +262,7 @@ const updateImageWidth = () => {
   }
 }
 
-const getMarkerSize = (marker) => {
+const getMarkerSize = (marker: Marker) => {
   const baseSize = marker.size || 60
   const scaleFactor = imageWidth.value / 600
   return baseSize * scaleFactor
@@ -204,7 +290,7 @@ onMounted(() => {
   preloadImages()
   checkMobile()
   
-  if (process.client) {
+  if (import.meta.client) {
     window.addEventListener('resize', () => {
       updateImageWidth()
       checkMobile()
@@ -213,7 +299,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  if (process.client) {
+  if (import.meta.client) {
     window.removeEventListener('resize', updateImageWidth)
   }
 })
