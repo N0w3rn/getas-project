@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
+    serveStatic: true,
     publicAssets: [
       {
         baseURL: '/',
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
       }
     ]
   },
+
   i18n: {
     locales: [
       { code: 'de', iso: 'de-DE', file: 'de.json', name: 'Deutsch' },
