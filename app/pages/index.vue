@@ -23,7 +23,7 @@
 <script setup lang="ts">
 const { showModal, checkAndShowModal, closeModal } = useWelcomeModal(15)
 
-const sceneBackground = '/images/bg/map.jpg'
+const sceneBackground = 'images/bg/map.jpg'
 
 const sceneMarkers = [
   {

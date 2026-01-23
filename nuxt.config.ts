@@ -7,18 +7,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n'
   ],
-
-  nitro: {
-    serveStatic: true,
-    publicAssets: [
-      {
-        baseURL: '/',
-        dir: 'public',
-        maxAge: 60 * 60 * 24 * 365
-      }
-    ]
-  },
-
   i18n: {
     locales: [
       { code: 'de', iso: 'de-DE', file: 'de.json', name: 'Deutsch' },
