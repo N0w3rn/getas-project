@@ -25,14 +25,84 @@
           </div>
         </div>
 
-        <!-- Rechts: Locale Switch -->
+        <!-- Rechts: Behind the Scenes Button + Locale Switch -->
         <div class="flex-1 flex justify-end">
-          <div class="relative" ref="dropdownRef">
-            <button
-              @click="toggleDropdown"
-              class="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg transition duration-200"
+          <div class="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+            <!-- Locale Switch -->
+            <div class="relative w-full md:w-auto" ref="dropdownRef">
+              <button
+                @click="toggleDropdown"
+                class="w-full md:w-auto flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg transition duration-200"
+              >
+                <!-- Globus SVG -->
+                <svg 
+                  class="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                
+                <!-- Locale Kürzel -->
+                <span class="font-semibold uppercase">{{ locale }}</span>
+                
+                <!-- Dropdown Pfeil -->
+                <svg 
+                  class="w-4 h-4 transition-transform duration-200"
+                  :class="{ 'rotate-180': isOpen }"
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <transition
+                enter-active-class="transition ease-out duration-100"
+                enter-from-class="transform opacity-0 scale-95"
+                enter-to-class="transform opacity-100 scale-100"
+                leave-active-class="transition ease-in duration-75"
+                leave-from-class="transform opacity-100 scale-100"
+                leave-to-class="transform opacity-0 scale-95"
+              >
+                <div 
+                  v-if="isOpen"
+                  class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl overflow-hidden z-50"
+                >
+                  <button
+                    v-for="loc in availableLocales"
+                    :key="loc.code"
+                    @click="switchLocale(loc.code)"
+                    class="w-full px-4 py-3 text-left hover:bg-slate-100 transition duration-150 flex items-center justify-between"
+                    :class="{ 'bg-slate-50': locale === loc.code }"
+                  >
+                    <span class="text-gray-800 font-medium">{{ loc.name }}</span>
+                    <span class="text-gray-500 text-sm uppercase">{{ loc.code }}</span>
+                  </button>
+                </div>
+              </transition>
+            </div>
+
+            <!-- Behind the Scenes Button -->
+            <NuxtLink
+              :to="localePath('/behind-the-scenes')"
+              class="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg transition duration-200"
+              :title="'Behind the Scenes'"
             >
-              <!-- Globus SVG -->
+              <!-- Kamera/Film Icon -->
               <svg 
                 class="w-5 h-5" 
                 fill="none" 
@@ -43,55 +113,11 @@
                   stroke-linecap="round" 
                   stroke-linejoin="round" 
                   stroke-width="2" 
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                 />
               </svg>
-              
-              <!-- Locale Kürzel -->
-              <span class="font-semibold uppercase">{{ locale }}</span>
-              
-              <!-- Dropdown Pfeil -->
-              <svg 
-                class="w-4 h-4 transition-transform duration-200"
-                :class="{ 'rotate-180': isOpen }"
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="2" 
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-
-            <!-- Dropdown Menu -->
-            <transition
-              enter-active-class="transition ease-out duration-100"
-              enter-from-class="transform opacity-0 scale-95"
-              enter-to-class="transform opacity-100 scale-100"
-              leave-active-class="transition ease-in duration-75"
-              leave-from-class="transform opacity-100 scale-100"
-              leave-to-class="transform opacity-0 scale-95"
-            >
-              <div 
-                v-if="isOpen"
-                class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl overflow-hidden z-50"
-              >
-                <button
-                  v-for="loc in availableLocales"
-                  :key="loc.code"
-                  @click="switchLocale(loc.code)"
-                  class="w-full px-4 py-3 text-left hover:bg-slate-100 transition duration-150 flex items-center justify-between"
-                  :class="{ 'bg-slate-50': locale === loc.code }"
-                >
-                  <span class="text-gray-800 font-medium">{{ loc.name }}</span>
-                  <span class="text-gray-500 text-sm uppercase">{{ loc.code }}</span>
-                </button>
-              </div>
-            </transition>
+              <span class="hidden md:inline font-medium">Behind the Scenes</span>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -100,7 +126,7 @@
       <div class="lg:hidden mt-3 pt-3 border-t border-slate-700">
         <div class="text-xs text-gray-400">
           <span class="font-semibold">{{ $t('team') }}:</span>
-          <span class="ml-2">Lara Behnke, Theresa Kerl, Silija Linke</span>
+          <span class="ml-2">Lara Behnke, Theresa Kerl, Silja Linke</span>
         </div>
       </div>
     </div>
