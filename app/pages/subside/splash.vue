@@ -12,7 +12,7 @@
 <script setup>
 const doveMarker = [
   {
-    id: 'dove-chill',
+    id: 'splash',
     link: '/subside/dove-hungry',
     image: '/images/sides/splash.gif',
     x: 54,

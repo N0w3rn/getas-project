@@ -1,10 +1,10 @@
 <template>
   <PageWrapper>
         <InteractiveImage 
-          background-image="/images/bg/tree-background.jpg"
+          background-image="/images/bg/dove-searches-food-background.jpg"
           :markers="doveMarker"
           fill-viewport
-          background-color="#FFFFFF"
+          background-color="#BCCDD7"
         />
   </PageWrapper>
 </template>
@@ -12,12 +12,12 @@
 <script setup>
 const doveMarker = [
   {
-    id: 'dove-hungry',
+    id: 'dove-food-search',
     link: '/subside/dove-searches-food',
-    image: '/images/sides/hungry-dove.gif',
-    x: 59,
-    y: 32,
-    size: 300,
+    image: '/images/sides/dove-food-search.gif',
+    x: 87.7,
+    y: 73.5,
+    size: 150,
     label: false
   }
 ]
