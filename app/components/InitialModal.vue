@@ -56,7 +56,7 @@
                       @click="handleClose"
                       class="px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
-                      Verstanden
+                      {{ $t('understood') }}
                     </button>
                   </div>
                 </div>

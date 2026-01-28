@@ -134,7 +134,7 @@
                         @click="closeHelp"
                         class="px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                       >
-                        {{ closeButtonText || 'Verstanden' }}
+                        {{ closeButtonText || $('understood') }}
                       </button>
                     </div>
                   </div>
