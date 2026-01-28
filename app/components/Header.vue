@@ -87,10 +87,29 @@
                     :key="loc.code"
                     @click="switchLocale(loc.code)"
                     class="w-full px-4 py-3 text-left hover:bg-slate-100 transition duration-150 flex items-center justify-between"
-                    :class="{ 'bg-slate-50': locale === loc.code }"
+                    :class="{ 
+                      'bg-slate-100 font-semibold': locale === loc.code 
+                    }"
                   >
-                    <span class="text-gray-800 font-medium">{{ loc.name }}</span>
-                    <span class="text-gray-500 text-sm uppercase">{{ loc.code }}</span>
+                    <span class="text-gray-800">{{ loc.name }}</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-gray-500 text-sm uppercase">{{ loc.code }}</span>
+                      <!-- Check Icon für aktive Sprache -->
+                      <svg 
+                        v-if="locale === loc.code"
+                        class="w-5 h-5 text-green-600" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          stroke-linecap="round" 
+                          stroke-linejoin="round" 
+                          stroke-width="2" 
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
                   </button>
                 </div>
               </transition>
@@ -99,7 +118,10 @@
             <!-- Behind the Scenes Button -->
             <NuxtLink
               :to="localePath('/behind-the-scenes')"
-              class="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg transition duration-200"
+              class="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition duration-200"
+              :class="isOnBehindTheScenes 
+                ? 'bg-slate-600 ring-2 ring-slate-400' 
+                : 'bg-slate-700 hover:bg-slate-600'"
               :title="'Behind the Scenes'"
             >
               <!-- Kamera/Film Icon -->
@@ -136,11 +158,16 @@
 <script setup>
 const { locale, setLocale, locales } = useI18n()
 const localePath = useLocalePath()
+const route = useRoute()
 const isOpen = ref(false)
 const dropdownRef = ref(null)
 
 const availableLocales = computed(() => {
   return locales.value
+})
+
+const isOnBehindTheScenes = computed(() => {
+  return route.path.includes('behind-the-scenes')
 })
 
 const toggleDropdown = () => {
