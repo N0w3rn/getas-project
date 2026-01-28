@@ -3,7 +3,7 @@
     <Header />
     <main class="flex-grow" style="background-color: #e8e4db;">
       <div class="my-12">
-        lol jo
+        Placeholder
       </div>
     </main>
     <Footer />

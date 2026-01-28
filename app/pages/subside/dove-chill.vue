@@ -1,11 +1,11 @@
 <template>
   <PageWrapper>
-        <InteractiveImage 
-          background-image="/images/bg/tree-background.jpg"
-          :markers="doveMarker"
-          fill-viewport
-          background-color="#FFFFFF"
-        />
+    <InteractiveImage 
+      background-image="/images/bg/tree-background.jpg"
+      :markers="doveMarker"
+      fill-viewport
+      background-color="#FFFFFF"
+    />
   </PageWrapper>
 </template>
 

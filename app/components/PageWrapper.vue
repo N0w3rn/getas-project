@@ -47,6 +47,7 @@
 
     <!-- Right Side: Help/Question Button -->
     <button
+      v-if="helpTitle || helpContent"
       @click="toggleHelp"
       class="fixed top-4 right-4 md:top-5 md:right-5 lg:top-6 lg:right-6 z-50 p-2 md:p-2.5 lg:p-3 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group ring-2 ring-gray-400"
       aria-label="Help"
@@ -63,18 +64,123 @@
     </button>
     
     <slot />
+
+    <!-- Help Modal -->
+    <Teleport to="body">
+      <Transition
+        enter-active-class="transition ease-out duration-300"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition ease-in duration-200"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-if="isHelpModalOpen"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900 bg-opacity-75"
+          @click.self="closeHelp"
+        >
+          <Transition
+            enter-active-class="transition ease-out duration-300 delay-100"
+            enter-from-class="opacity-0 scale-90"
+            enter-to-class="opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-200"
+            leave-from-class="opacity-100 scale-100"
+            leave-to-class="opacity-0 scale-90"
+          >
+            <div
+              v-if="isHelpModalOpen"
+              class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden"
+            >
+              <div class="relative">
+                <button
+                  @click="closeHelp"
+                  class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all"
+                  aria-label="Close modal"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <div class="px-12 py-10 overflow-y-auto max-h-[80vh]">
+                  <div class="space-y-8">
+                    <!-- Title -->
+                    <div v-if="helpTitle" class="space-y-4 text-center">
+                      <h2 class="text-5xl font-light text-gray-900 tracking-tight">
+                        {{ helpTitle }}
+                      </h2>
+                      <div class="w-16 h-1 bg-gray-900 mx-auto"></div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="space-y-6 text-gray-700 text-base leading-relaxed max-w-xl mx-auto">
+                      <!-- HTML Content -->
+                      <div 
+                        v-if="renderHtml && helpContent"
+                        v-html="helpContent"
+                        class="prose prose-gray max-w-none"
+                      ></div>
+                      
+                      <!-- Plain Text Content -->
+                      <div v-else-if="helpContent">
+                        {{ helpContent }}
+                      </div>
+                    </div>
+
+                    <!-- Close Button -->
+                    <div class="flex justify-center pt-4">
+                      <button
+                        @click="closeHelp"
+                        class="px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
+                      >
+                        {{ closeButtonText || 'Verstanden' }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
+const props = defineProps({
+  helpTitle: {
+    type: String,
+    default: ''
+  },
+  helpContent: {
+    type: String,
+    default: ''
+  },
+  renderHtml: {
+    type: Boolean,
+    default: false
+  },
+  closeButtonText: {
+    type: String,
+    default: 'Verstanden'
+  }
+})
+
 const router = useRouter()
 const localePath = useLocalePath()
+const isHelpModalOpen = ref(false)
 
 const goBack = () => {
   router.back()
 }
 
 const toggleHelp = () => {
-  console.log('Help clicked')
+  isHelpModalOpen.value = true
+}
+
+const closeHelp = () => {
+  isHelpModalOpen.value = false
 }
 </script>

@@ -17,7 +17,7 @@ const doveMarker = [
     image: '/images/sides/dove-sitting-fence.gif',
     x: 50,
     y: 16,
-    size: 650,
+    size: 180,
     label: false
   }
 ]
