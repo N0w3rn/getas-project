@@ -1,6 +1,6 @@
 <template>
   <PageWrapper
-    :help-content="helpContent"
+    :help-content="$t('hedgehog.cozy.content')"
     :sources="sources"
     :close-button-text="$t('continue')"
   >
@@ -15,8 +15,6 @@
 </template>
 
 <script setup>
-const helpContent = 'Igel brauchen kleine Verstecke wie Gehölze oder Gebüsche, um sich wohlzufühlen.1* Igor hat sein zu Hause im Hinterhof des Bültenwegs 12 gefunden. Wie alle anderen Igel auch, ist Igor nachtaktiv. Heute hat er schlecht geträumt und wacht ganz verschlafen in seinem Laubhaufen auf.'
-
 const sources = [
   '„Igel: Stachelige Stadtbewohner", Deutsche Wildtier Stiftung, o. J., zugegriffen 31. Januar 2026, https://www.deutschewildtierstiftung.de/wildtiere/igel'
 ]

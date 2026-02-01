@@ -1,6 +1,6 @@
 <template>
   <PageWrapper
-    :help-content="helpContent"
+    :help-content="$t('hedgehog.nightWalk.content')"
     :sources="sources"
     :close-button-text="$t('continue')"
   >
@@ -14,8 +14,6 @@
 </template>
 
 <script setup>
-const helpContent = 'Igor sucht weiter nach etwas essbarem. Sein Geruchsinn ist sehr gut.1* Er folgt also seiner Nase und watschelt Richtung Biomüll.'
-
 const sources = [
   '„Biologie des Igels - Igelschutz-Interessengemeinschaft e.V.", zugegriffen 1. Februar 2026, https://www.igelschutz-ev.de/live/Biologie-des-Igels/biologie-igel.aspx'
 ]

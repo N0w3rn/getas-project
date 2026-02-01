@@ -15,6 +15,20 @@
     "tipText": "pay attention to recurring elements or places that connect the everyday lives of our protagonists.",
     "greeting": "Three lives. One place. Welcome to Bültenweg 12! We're glad you're here."
   },
+  "hedgehog": {
+    "cozy": {
+      "content": "Hedgehogs need small hiding spots like hedges or bushes to feel comfortable.1* Igor has found his home in the backyard of Bültenweg 12. Like all other hedgehogs, Igor is nocturnal. Today he had a bad dream and wakes up very sleepy in his pile of leaves."
+    },
+    "walking": {
+      "content": "In winter, hedgehogs find too little food, which is why they hibernate from November to March.1* Igor has had difficulty building up a layer of fat so far, which is why he goes directly in search of food."
+    },
+    "drinking": {
+      "content": "Soon Igor has found a puddle from which he drinks thirstily. But what is lying in the water? Fact check: \"Every year, 4.5 trillion cigarette butts from smoked cigarettes end up in the environment worldwide. Often only the plastic-coated filter remains from a smoked cigarette. This contains almost 4,000 chemical substances, many of which are toxic.\"1* In Berlin, researchers calculated 2.7 million cigarette butts per square kilometer. Rainwater dissolves more than half of the remaining toxins still in the cigarettes within half an hour. Wastewater treatment plants can largely break down the nicotine in the water, but around 70 percent of nicotine-containing rainwater ends up directly in bodies of water.2* \"An experiment by US zoologist Thomas Novotny from San Diego State University illustrates the toxicity: The researcher added one cigarette butt to one liter of water and let fish swim in it. After four days, half of the animals were dead.\"3*"
+    },
+    "nightWalk": {
+      "content": "Igor continues to search for something edible. His sense of smell is very good.1* So he follows his nose and waddles towards the organic waste."
+    }
+  },
   "markers": {
     "smokingManDescription": "Jonas smokes like 28% of all Germans.",
     "dove": {
