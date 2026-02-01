@@ -134,7 +134,7 @@
                         @click="closeHelp"
                         class="px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                       >
-                        {{ closeButtonText || $('understood') }}
+                        {{ closeButtonTextCompo }}
                       </button>
                     </div>
                   </div>
@@ -148,7 +148,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+const { t } = useI18n();
+
 const props = defineProps({
   helpTitle: {
     type: String,
@@ -163,10 +165,11 @@ const props = defineProps({
     default: false
   },
   closeButtonText: {
-    type: String,
-    default: 'Verstanden'
+    type: String
   }
 })
+
+const closeButtonTextCompo = props.closeButtonText ? props.closeButtonText : t('understood')
 
 const router = useRouter()
 const localePath = useLocalePath()
