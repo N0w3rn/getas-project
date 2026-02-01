@@ -4,7 +4,7 @@
           background-image="/images/bg/dove-stuck-background.jpg"
           :markers="doveMarker"
           fill-viewport
-          background-color="#BCCDD7"
+          background-color="#837170"
         />
   </PageWrapper>
 </template>

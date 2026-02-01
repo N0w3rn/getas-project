@@ -1,24 +1,43 @@
 <template>
   <PageWrapper>
-        <InteractiveImage 
-          background-image="/images/bg/dove-dizzy-fly-background.jpg"
-          :markers="doveMarker"
-          fill-viewport
-          background-color="#6DACDF"
-        />
+    <div class="relative min-h-screen w-full overflow-hidden">
+      <div 
+        class="absolute inset-0 bg-cover bg-center"
+        :style="{ backgroundImage: `url('/images/bg/dove-dizzy-fly-background.jpg')` }"
+      ></div>
+
+      <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
+        <NuxtLink 
+          :to="localePath('/subside/dove-dizzy-fly')"
+          class="block transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+        >
+          <img 
+            src="/images/sides/dove-dizzy-fly.gif" 
+            alt="Tabea fliegt"
+            class="w-96 h-auto md:w-[32rem] lg:w-[40rem] xl:w-[48rem] drop-shadow-2xl"
+          />
+        </NuxtLink>
+
+      </div>
+    </div>
   </PageWrapper>
 </template>
 
 <script setup>
-const doveMarker = [
-  {
-    id: 'dove-dizzy-fly',
-    link: '/subside/dove-dizzy-fly',
-    image: '/images/sides/dove-dizzy-fly.gif',
-    x: 50,
-    y: 50,
-    size: 560,
-    label: false
-  }
-]
+const localePath = useLocalePath()
 </script>
+
+<style scoped>
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.hover\:scale-110:hover img {
+  animation: float 2s ease-in-out infinite;
+}
+</style>

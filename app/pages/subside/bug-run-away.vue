@@ -5,7 +5,7 @@
           :markers="doveMarker"
           :animate-image="false"
           fill-viewport
-          background-color="#BCCDD7"
+          background-color="#6D7649"
         />
   </PageWrapper>
 </template>
