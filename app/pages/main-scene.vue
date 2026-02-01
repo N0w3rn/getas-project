@@ -34,8 +34,7 @@ const sceneMarkers = [
   },
   {
     id: 'waving-man-on-sidewalk',
-    slug: 'wavingman',
-    link: '/subside/wavingman',
+    link: '/subside/man-in-bed',
     image: '/images/markers/wavingMan.webp',
     x: 34,
     y: 52,

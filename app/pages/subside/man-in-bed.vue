@@ -12,11 +12,11 @@
 <script setup>
 const doveMarker = [
   {
-    id: 'dove-chill',
-    link: '/subside/man-in-bed',
+    id: 'man-in-bed',
+    link: '/subside/smoking-man',
     image: '/images/sides/TiredMan.webp',
-    x: 69,
-    y: 37.6,
+    x: 65,
+    y: 38.4,
     size: 150,
     label: false
   }

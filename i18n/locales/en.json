@@ -30,6 +30,11 @@
       "content": "Igor continues to search for something edible. His sense of smell is very good.1* So he follows his nose and waddles towards the organic waste."
     }
   },
+  "man": {
+    "smoking": {
+      "content": "Jonas steps out into the backyard for a smoke. He lights a cigarette and takes a deep drag. Smoking is still very common in Germany. Around 28% of all Germans smoke regularly. On average, a smoker consumes around 12 cigarettes a day. Each cigarette produces around 14 grams of waste, including the cigarette butt, packaging, and lighter. This adds up to around 6 kilograms of waste per year per smoker.3* Jonas exhales the smoke and watches as the smoke swirls in the cold air."
+    }
+  },
   "dove": {
     "onFence": {
       "content": "Tabea lands on a fence. Plants grow all around and tickle her claws. From here she can see everything…"
