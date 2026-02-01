@@ -116,13 +116,13 @@
             </div>
 
             <!-- Behind the Scenes Button -->
-            <NuxtLink
-              :to="localePath('/behind-the-scenes')"
+            <button
+              @click="toggleBehindTheScenes"
               class="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition duration-200"
               :class="isOnBehindTheScenes 
                 ? 'bg-slate-600 ring-2 ring-slate-400' 
                 : 'bg-slate-700 hover:bg-slate-600'"
-              :title="'Behind the Scenes'"
+              :title="isOnBehindTheScenes ? $t('back') : $t('behindTheScenes')"
             >
               <!-- Kamera/Film Icon -->
               <svg 
@@ -139,7 +139,7 @@
                 />
               </svg>
               <span class="hidden md:inline font-medium">{{ $t('behindTheScenes') }}</span>
-            </NuxtLink>
+            </button>
           </div>
         </div>
       </div>
@@ -158,6 +158,7 @@
 <script setup>
 const { locale, setLocale, locales } = useI18n()
 const localePath = useLocalePath()
+const router = useRouter()
 const route = useRoute()
 const isOpen = ref(false)
 const dropdownRef = ref(null)
@@ -177,6 +178,14 @@ const toggleDropdown = () => {
 const switchLocale = (newLocale) => {
   setLocale(newLocale)
   isOpen.value = false
+}
+
+const toggleBehindTheScenes = () => {
+  if (isOnBehindTheScenes.value) {
+    router.push(localePath('/'))
+  } else {
+    router.push(localePath('/behind-the-scenes'))
+  }
 }
 
 // Dropdown schließen bei Klick außerhalb

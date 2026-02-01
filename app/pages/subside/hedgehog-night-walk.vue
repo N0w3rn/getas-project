@@ -2,6 +2,7 @@
   <PageWrapper
     :help-content="helpContent"
     :sources="sources"
+    :close-button-text="$t('continue')"
   >
     <InteractiveImage 
       background-image="/images/bg/hedgehog-night-walk-background.jpg"
