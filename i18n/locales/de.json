@@ -5,10 +5,12 @@
   "behindTheScenes": "Hinter den Kulissen",
   "understood": "Verstanden",
   "back": "Zurück",
+  "sources": "Quellen",
   "indexPageTextBlock1": {
-    "intro": "Das Seminarprojekt untersucht einen scheinbar unspektakulären Ort: den Privatparkplatz eines neu errichteten Wohnkomplexes. Ausgangspunkt ist das Buch Field Guide to the Patchy Anthropocene von Anna Tsing, Anna Lowenhaupt Tsing u. a., das den Anthropozän-Begriff nicht als homogenen Zustand, sondern als ein Gefüge aus fragmentierten, ungleichzeitig entstandenen 'Patches' versteht. Diese Patches sind räumliche, soziale und ökologische Teilstücke, in denen menschliche Eingriffe, natürliche Prozesse und deren Folgen sichtbar aufeinandertreffen.",
-    "method": "Methodisch arbeiten wir mit der Zerlegung des Ortes in unterschiedliche Patches: funktionale, materielle, zeitliche und ökologische. Diese werden analysiert, kartiert und narrativ miteinander verknüpft.",
-    "implementation": "Um die komplexen Zusammenhänge verständlich und zugänglich zu machen, wird das Projekt visuell und erzählerisch umgesetzt. Animationen zeigen Prozesse wie Wachstum, Verdrängung oder Abfluss über Zeit, während eine kurze fiktionale Geschichte die Perspektive wechselt – etwa hin zu nicht-menschlichen Akteuren wie Pflanzen, Wasser oder Hitze. So versteht sich das Projekt als Übersetzungsarbeit zwischen Theorie, Ort und Wahrnehmung und macht die verborgenen Dynamiken eines alltäglichen Raumes im patchy Anthropocene erfahrbar."
+    "intro": "Erlebe die Geschichten von Igor, Tabea und Jonas in einer interaktiven Reise durch die oft unsichtbaren Folgen menschlichen Handelns.",
+    "rules": "Spielregeln: klicke auf die Animationen, um die Geschichten weiter zu verfolgen.",
+    "tip": "Tipp: achte auf sich wiederholende Elemente oder Orte, die den Alltag unserer Protagonist*innen verknüpfen.",
+    "greeting": "Drei Leben. Ein Ort. Willkommen im Bültenweg 12! Schön, dass du da bist."
   },
   "markers": {
     "smokingManDescription": "Jonas raucht wie 28% aller Deutschen",

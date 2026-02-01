@@ -5,10 +5,12 @@
   "behindTheScenes": "Behind the scenes",
   "understood": "Understood",
   "back": "Back",
+  "sources": "Sources",
   "indexPageTextBlock1": {
-    "intro": "The seminar project examines a seemingly unspectacular location: the private parking lot of a newly built residential complex. The starting point is the book Field Guide to the Patchy Anthropocene by Anna Tsing, Anna Lowenhaupt Tsing, and others, which understands the concept of the Anthropocene not as a homogeneous state, but as a structure of fragmented, asynchronously formed 'patches.'",
-    "method": "These patches are spatial, social, and ecological segments in which human interventions, natural processes, and their consequences visibly intersect. Methodologically, we work by breaking down the location into different patches: functional, material, temporal, and ecological. These are analyzed, mapped, and linked together narratively.",
-    "implementation": "In order to make the complex interrelationships understandable and accessible, the project is implemented visually and narratively. Animations show processes such as growth, displacement, or runoff over time, while a short fictional story shifts perspectives—for example, to non-human actors such as plants, water, or heat. The project thus sees itself as a translation between theory, place, and perception, making the hidden dynamics of an everyday space in the patchy Anthropocene tangible."
+    "intro": "Experience the stories of Igor, Tabea, and Jonas on an interactive journey through the often invisible consequences of human actions.",
+    "rules": "Game rules: click on the animations to continue following the stories.",
+    "tip": "Tip: pay attention to recurring elements or places that connect the everyday lives of our protagonists.",
+    "greeting": "Three lives. One place. Welcome to Bültenweg 12! We're glad you're here."
   },
   "markers": {
     "smokingManDescription": "Jonas smokes like 28% of all Germans.",
