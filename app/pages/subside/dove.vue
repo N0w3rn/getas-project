@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper :help-content="$t('dove.takeOff.content')">
     <div class="relative min-h-screen w-full overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center"
@@ -7,19 +7,6 @@
       ></div>
 
       <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
-        
-        <div class="text-center mb-8 md:mb-12 max-w-2xl">
-          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-4 md:mb-6 leading-tight">
-            {{ $t('markers.dove.title') }}
-          </h1>
-          <p class="text-base md:text-lg lg:text-xl text-black leading-relaxed">
-            {{ $t('markers.dove.description1') }}
-          </p>
-          <p class="text-base md:text-lg lg:text-xl text-black leading-relaxed mt-2">
-            {{ $t('markers.dove.description2') }}
-          </p>
-        </div>
-
         <NuxtLink 
           :to="localePath('/subside/dove-sitting-on-fence')"
           class="block transform hover:scale-110 transition-transform duration-300 cursor-pointer"

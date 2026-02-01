@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper help-content="Unter Taber macht es platsch. ">
+  <PageWrapper :help-content="$t('dove.splash.content')">
         <InteractiveImage 
           background-image="/images/bg/splash-background.png"
           :markers="doveMarker"

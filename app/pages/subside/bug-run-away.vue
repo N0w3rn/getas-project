@@ -1,6 +1,6 @@
 <template>
   <PageWrapper 
-    help-content="Zwischen den Rohren krabbelt ein Käfer hervor. Tabeas Augen werden groß. Doch der Käfer entdeckt sie und in der nächsten Sekunde ist er auch schon wieder verschwunden. Aber nicht mit Tabea…<br><br>Todesmutig wirft sie sich kopfüber hinterher."
+    :help-content="$t('dove.bugRunAway.content')"
   >
     <InteractiveImage 
       background-image="/images/bg/bug-run-away-background.jpg"

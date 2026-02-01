@@ -28,6 +28,10 @@ export default defineNuxtConfig({
     langDir: 'locales',
     defaultLocale: 'de',
     strategy: 'prefix_except_default',
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false
+    }
   },
 
   app: {

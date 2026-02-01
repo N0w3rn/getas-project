@@ -4,10 +4,10 @@
   "team": "Team",
   "behindTheScenes": "Behind the scenes",
   "understood": "Understood",
-  "letsGo": "Lets go",
+  "letsGo": "Let's go",
   "back": "Back",
   "sources": "Sources",
-  "continue": "continue reading",
+  "continue": "Continue reading",
   "indexPageTextBlock1": {
     "intro": "Experience the stories of Igor, Tabea, and Jonas on an interactive journey through the often invisible consequences of human actions.",
     "rulesLabel": "Game rules:",
@@ -28,6 +28,44 @@
     },
     "nightWalk": {
       "content": "Igor continues to search for something edible. His sense of smell is very good.1* So he follows his nose and waddles towards the organic waste."
+    }
+  },
+  "dove": {
+    "onFence": {
+      "content": "Tabea lands on a fence. Plants grow all around and tickle her claws. From here she can see everything…"
+    },
+    "cigaretteFind": {
+      "content": "Down in the puddle lies something strange. It is long, soft and a bit dirty."
+    },
+    "smokingDove": {
+      "content": "Tabea pecks at it carefully. Quickly she flies back up to the fence to take a closer look. This could be good for a nest!"
+    },
+    "chill": {
+      "content": "With the find in her beak, she flies back to her tree to put it in her hiding place. Now for a break…"
+    },
+    "splash": {
+      "content": "Below Tabea, there's a splash."
+    },
+    "hungry": {
+      "content": "Tabea's stomach is growling. She would do anything for a little beetle right now…"
+    },
+    "searchesFood": {
+      "content": "Fortunately, Tabea knows a place where there is always something to eat. You just have to search a little…"
+    },
+    "bugRunAway": {
+      "content": "A beetle crawls out from between the pipes. Tabea's eyes widen. But the beetle spots her and in the next second it has disappeared. But not with Tabea…<br><br>Fearlessly, she throws herself headfirst after it."
+    },
+    "stuck": {
+      "content": "Oh great! Suddenly nothing works anymore. Tabea is stuck. It rustles and crackles around her. The plastic pulls at her wings."
+    },
+    "dizzy": {
+      "content": "After a long struggle, Tabea tumbles back out of the pipe. She is confused, her feathers standing out wildly from her body."
+    },
+    "dizzyFly": {
+      "content": "Confused, Tabea flies on. Her nest absolutely must be finished."
+    },
+    "takeOff": {
+      "content": "Tabea flies off. She wants to build a nest for the very first time — but no one has shown her how to do it. What actually belongs in a nest? Below her lies the backyard full of things. Some sparkle, some have a scent. Maybe there's something here."
     }
   },
   "markers": {

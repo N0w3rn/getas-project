@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper help-content="Tauber pickt es vorsichtig an. Schnell fliegt sie wieder hoch auf das Gatter um es näher betrachten zu können. Das könnte gut für ein Nest sein!">
+  <PageWrapper :help-content="$t('dove.smokingDove.content')">
       <InteractiveImage 
         background-image="/images/bg/sign-background.jpg"
         :markers="doveMarker"

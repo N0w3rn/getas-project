@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper help-content="Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden">
+  <PageWrapper :help-content="$t('dove.dizzyFly.content')">
     <div class="relative min-h-screen w-full overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center"

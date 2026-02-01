@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper help-content="Zum Glück kennt Tabea einen Ort, an dem immer etwas zu Essen zu finden ist. Man muss nur ein bisschen suchen…">
+  <PageWrapper :help-content="$t('dove.searchesFood.content')">
         <InteractiveImage 
           background-image="/images/bg/dove-searches-food-background.jpg"
           :markers="doveMarker"

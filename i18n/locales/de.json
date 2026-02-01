@@ -30,13 +30,46 @@
       "content": "Igor sucht weiter nach etwas essbarem. Sein Geruchsinn ist sehr gut.1* Er folgt also seiner Nase und watschelt Richtung Biomüll."
     }
   },
-  "markers": {
-    "smokingManDescription": "Jonas raucht wie 28% aller Deutschen",
-    "dove": {
-      "title": "Tabea fliegt los.",
-      "description1": "Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht.",
-      "description2": "Was gehört eigentlich zu einem Nest?"
+  "dove": {
+    "onFence": {
+      "content": "Tabea landet auf einem Gatter. Pflanzen wachsen rundherum und kitzeln ihre Krallen. Von hier kann sie alles sehen…"
+    },
+    "cigaretteFind": {
+      "content": "Unten in der Pfütze liegt etwas Merkwürdiges. Es ist lang, weich und ein bisschen schmutzig."
+    },
+    "smokingDove": {
+      "content": "Tabea pickt es vorsichtig an. Schnell fliegt sie wieder hoch auf das Gatter um es näher betrachten zu können. Das könnte gut für ein Nest sein!"
+    },
+    "chill": {
+      "content": "Mit dem Fund im Schnabel fliegt sie zurück zu ihrem Baum, um ihn in ihr Versteck zu bringen. Jetzt erstmal eine Pause…"
+    },
+    "splash": {
+      "content": "Unter Tabea macht es platsch."
+    },
+    "hungry": {
+      "content": "Der Bauch von Tabea knurrt. Für einen kleinen Käfer würde sie jetzt alles tun…"
+    },
+    "searchesFood": {
+      "content": "Zum Glück kennt Tabea einen Ort, an dem immer etwas zu Essen zu finden ist. Man muss nur ein bisschen suchen…"
+    },
+    "bugRunAway": {
+      "content": "Zwischen den Rohren krabbelt ein Käfer hervor. Tabeas Augen werden groß. Doch der Käfer entdeckt sie und in der nächsten Sekunde ist er auch schon wieder verschwunden. Aber nicht mit Tabea…<br><br>Todesmutig wirft sie sich kopfüber hinterher."
+    },
+    "stuck": {
+      "content": "Na toll! Plötzlich geht nichts mehr. Tabea steckt fest. Es raschelt und knistert um sie herum. Das Plastik zieht an ihren Flügeln."
+    },
+    "dizzy": {
+      "content": "Nach einem langen Kampf plumpst Tabea wieder aus der Röhre heraus. Sie ist verwirrt, die Federn stehen wirr von ihrem Körper ab."
+    },
+    "dizzyFly": {
+      "content": "Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden."
+    },
+    "takeOff": {
+      "content": "Tabea fliegt los. Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht. Was gehört eigentlich zu einem Nest? Unter ihr liegt der Hinterhof voller Dinge. Manche glitzern, manche duften. Vielleicht ist hier etwas dabei."
     }
+  },
+  "markers": {
+    "smokingManDescription": "Jonas raucht wie 28% aller Deutschen"
   },
   "words": {
     "freedom": "Freiheit",
