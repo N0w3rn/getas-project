@@ -1,9 +1,8 @@
 <template>
   <PageWrapper>
         <InteractiveImage 
-          background-image="/images/bg/hedgehog-cozy-background.jpg"
+          background-image="/images/bg/Hedgehog-Walking-Background.jpg"
           :markers="doveMarker"
-          :animate-image="false"
           fill-viewport
           background-color="#1B2233"
         />
@@ -13,11 +12,11 @@
 <script setup>
 const doveMarker = [
   {
-    id: 'hedgehog-cozy',
-    link: '/subside/hedgehog-walking',
-    image: '/images/sides/hedgehog-cozy.gif',
+    id: 'hedgehog-walking',
+    link: '/subside/hedgehog-drinking',
+    image: '/images/sides/Hedgehog-Walking.gif',
     x: 50,
-    y: 82,
+    y: 75,
     size: 600,
     label: false
   }

@@ -91,7 +91,7 @@
                   <img
                     :src="marker.image"
                     :alt="marker.slug || marker.id"
-                    class="block drop-shadow-lg select-none transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    :class="animateImage ? 'block drop-shadow-lg select-none transform hover:scale-110 transition-transform duration-300 cursor-pointer' : 'block drop-shadow-lg select-none cursor-pointer'"
                     :style="{
                       width: getMarkerSize(marker) + 'px',
                       height: 'auto'
@@ -189,13 +189,15 @@ const props = withDefaults(defineProps<{
   maxWidth?: string
   fillViewport?: boolean
   backgroundColor?: string
+  animateImage?: boolean
 }>(), {
   markers: () => [],
   enableZoom: false,
   fullscreen: false,
   maxWidth: '100%',
   fillViewport: false,
-  backgroundColor: '#f5f5f0'
+  backgroundColor: '#f5f5f0',
+  animateImage: true
 })
 
 const localePath = useLocalePath()
