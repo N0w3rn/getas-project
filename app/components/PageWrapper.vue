@@ -77,7 +77,7 @@
       >
         <div
           v-if="isHelpModalOpen"
-          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900 bg-opacity-75"
+          class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-gray-900 bg-opacity-75"
           @click.self="closeHelp"
         >
           <Transition
@@ -90,49 +90,65 @@
           >
             <div
               v-if="isHelpModalOpen"
-              class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden"
+              class="bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] sm:max-h-[85vh] md:max-h-[80vh] overflow-hidden"
             >
               <div class="relative">
                 <button
                   @click="closeHelp"
-                  class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all"
+                  class="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-5 md:right-5 z-10 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all"
                   aria-label="Close modal"
                 >
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
 
-                <div class="px-12 py-10 overflow-y-auto max-h-[80vh]">
-                  <div class="space-y-8">
+                <div class="px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10 lg:px-12 overflow-y-auto max-h-[90vh] sm:max-h-[85vh] md:max-h-[80vh]">
+                  <div class="space-y-6 sm:space-y-7 md:space-y-8">
                     <!-- Title -->
-                    <div v-if="helpTitle" class="space-y-4 text-center">
-                      <h2 class="text-5xl font-light text-gray-900 tracking-tight">
+                    <div v-if="helpTitle" class="space-y-3 sm:space-y-4 text-center pr-6 sm:pr-8 md:pr-0">
+                      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight leading-tight">
                         {{ helpTitle }}
                       </h2>
-                      <div class="w-16 h-1 bg-gray-900 mx-auto"></div>
+                      <div class="w-12 sm:w-14 md:w-16 h-0.5 sm:h-0.5 md:h-1 bg-gray-900 mx-auto"></div>
                     </div>
                     
                     <!-- Content -->
-                    <div class="space-y-6 text-gray-700 text-base leading-relaxed max-w-xl mx-auto">
+                    <div class="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
                       <!-- HTML Content -->
                       <div 
                         v-if="renderHtml && helpContent"
                         v-html="helpContent"
-                        class="prose prose-gray max-w-none"
+                        class="prose prose-sm sm:prose-base prose-gray max-w-none"
                       ></div>
                       
-                      <!-- Plain Text Content -->
-                      <div v-else-if="helpContent">
-                        {{ helpContent }}
+                      <!-- Plain Text Content with automatic superscript conversion -->
+                      <div v-else-if="helpContent" v-html="formattedContent"></div>
+                    </div>
+
+                    <!-- Sources Section -->
+                    <div v-if="sources && sources.length > 0" class="max-w-xl mx-auto">
+                      <div class="border-t border-gray-300 my-6 sm:my-7 md:my-8"></div>
+                      <div class="space-y-2.5 sm:space-y-3">
+                        <h3 class="text-xs sm:text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4">
+                          {{ t('sources') }}
+                        </h3>
+                        <div 
+                          v-for="(source, index) in sources" 
+                          :key="index"
+                          class="text-xs sm:text-sm text-gray-600 leading-relaxed break-words"
+                        >
+                          <sup class="font-semibold text-gray-900">{{ index + 1 }}</sup>
+                          <span class="ml-1">{{ source }}</span>
+                        </div>
                       </div>
                     </div>
 
                     <!-- Close Button -->
-                    <div class="flex justify-center pt-4">
+                    <div class="flex justify-center pt-3 sm:pt-4">
                       <button
                         @click="closeHelp"
-                        class="px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
+                        class="px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 bg-gray-900 hover:bg-gray-800 text-white text-sm sm:text-base font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                       >
                         {{ closeButtonTextCompo }}
                       </button>
@@ -166,10 +182,22 @@ const props = defineProps({
   },
   closeButtonText: {
     type: String
+  },
+  sources: {
+    type: Array as PropType<string[]>,
+    default: () => []
   }
 })
 
-const closeButtonTextCompo = props.closeButtonText ? props.closeButtonText : t('understood')
+const closeButtonTextCompo = computed(() => 
+  props.closeButtonText || t('understood')
+)
+
+// Convert "1*", "2*" etc. to superscript numbers
+const formattedContent = computed(() => {
+  if (!props.helpContent) return ''
+  return props.helpContent.replace(/(\d+)\*/g, '<sup>$1</sup>')
+})
 
 const router = useRouter()
 const localePath = useLocalePath()
