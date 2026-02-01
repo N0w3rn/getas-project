@@ -3,6 +3,7 @@
         <InteractiveImage 
           background-image="/images/bg/hedgehog-drinking-background.jpg"
           :markers="doveMarker"
+          :animate-image="false"
           fill-viewport
           background-color="#525252"
         />
