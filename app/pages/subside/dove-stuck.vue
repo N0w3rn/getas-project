@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Na toll! Plötzlich geht nichts mehr. Tabea steckt fes. Es raschelt und knistert um sie herum. Das Plastik zieht an ihren Flügeln.">
         <InteractiveImage 
           background-image="/images/bg/dove-stuck-background.jpg"
           :markers="doveMarker"

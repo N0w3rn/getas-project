@@ -2,7 +2,6 @@
   <PageWrapper
     :help-content="$t('hedgehog.drinking.content')"
     :sources="sources"
-    :close-button-text="$t('continue')"
   >
     <InteractiveImage 
       background-image="/images/bg/hedgehog-drinking-background.jpg"

@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Unten in der Pfütze liegt etwas Merkwürdiges. Es ist lang, weich und ein bisschen schmutzig.">
       <InteractiveImage 
         background-image="/images/bg/cigarette-background.JPG"
         :markers="doveMarker"

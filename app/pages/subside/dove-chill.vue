@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Mit dem Fund im Schnabel fliegt sie zurück zu ihrem Baum, um ihn in ihr Versteck zu bringen. Jetzt erstmal eine Pause…">
     <InteractiveImage 
       background-image="/images/bg/tree-background.jpg"
       :markers="doveMarker"

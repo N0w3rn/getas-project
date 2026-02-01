@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden">
     <div class="relative min-h-screen w-full overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center"

@@ -2,7 +2,6 @@
   <PageWrapper
     :help-content="$t('hedgehog.cozy.content')"
     :sources="sources"
-    :close-button-text="$t('continue')"
   >
     <ClientOnly>
       <InteractiveImage 

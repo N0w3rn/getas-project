@@ -190,7 +190,7 @@ const props = defineProps({
 })
 
 const closeButtonTextCompo = computed(() => 
-  props.closeButtonText || t('understood')
+  props.closeButtonText || t('continue')
 )
 
 // Convert "1*", "2*" etc. to superscript numbers

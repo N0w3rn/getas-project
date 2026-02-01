@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Der Bauch von Tabea knurrt. Für einen kleinen Käfer würde sie jetzt alles tun…">
         <InteractiveImage 
           background-image="/images/bg/tree-background.jpg"
           :markers="doveMarker"

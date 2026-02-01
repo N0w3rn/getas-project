@@ -2,7 +2,6 @@
   <PageWrapper
     :help-content="$t('hedgehog.walking.content')"
     :sources="sources"
-    :close-button-text="$t('continue')"
   >
     <InteractiveImage 
       background-image="/images/bg/Hedgehog-Walking-Background.jpg"

@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Nach einem langen Kampf plumpst Tabea wieder aus der Röhre heraus. Sie ist verwirrt, die Federn stehen wirr von ihrem Körper ab. ">
         <InteractiveImage 
           background-image="/images/bg/dove-dizzy-background.jpg"
           :markers="doveMarker"

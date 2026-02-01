@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper help-content="Tabea landet auf einem Gatter. Pflanzen wachsen rundherum und Kitzeln ihre Krallen. Von hier kann sie alles sehen…">
       <InteractiveImage 
         background-image="/images/bg/scene2-background.jpg"
         :markers="doveMarker"

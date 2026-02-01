@@ -2,7 +2,6 @@
   <PageWrapper
     :help-content="$t('hedgehog.nightWalk.content')"
     :sources="sources"
-    :close-button-text="$t('continue')"
   >
     <InteractiveImage 
       background-image="/images/bg/hedgehog-night-walk-background.jpg"
