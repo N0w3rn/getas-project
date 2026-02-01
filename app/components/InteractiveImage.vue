@@ -77,15 +77,16 @@
               class="w-full h-auto block"
             />
             <div class="absolute inset-0">
-              <template v-for="marker in markers" :key="marker.id">
+              <template v-for="(marker, index) in markers" :key="marker.id">
                 <NuxtLink
                   v-if="marker.type !== 'html' && marker.link"
                   :to="localePath(marker.link)"
-                  class="absolute group cursor-pointer hover:z-10"
+                  class="absolute group cursor-pointer"
                   :style="{
                     left: marker.x + '%',
                     top: marker.y + '%',
-                    transform: 'translate(-50%, -50%)'
+                    transform: 'translate(-50%, -50%)',
+                    zIndex: marker.zIndex ?? index
                   }"
                 >
                   <img
@@ -107,7 +108,8 @@
                   :style="{
                     left: marker.x + '%',
                     top: marker.y + '%',
-                    transform: 'translate(-50%, -50%)'
+                    transform: 'translate(-50%, -50%)',
+                    zIndex: marker.zIndex ?? index
                   }"
                 >
                   <img
@@ -131,7 +133,8 @@
                     top: marker.y + '%',
                     transform: 'translate(-50%, -50%)',
                     width: marker.width ? marker.width + 'px' : 'auto',
-                    maxWidth: marker.maxWidth ? marker.maxWidth + 'px' : 'none'
+                    maxWidth: marker.maxWidth ? marker.maxWidth + 'px' : 'none',
+                    zIndex: marker.zIndex ?? index
                   }"
                 >
                   <component 
@@ -179,6 +182,7 @@ interface Marker {
   maxWidth?: number
   slug?: string
   label?: boolean
+  zIndex?: number
 }
 
 const props = withDefaults(defineProps<{

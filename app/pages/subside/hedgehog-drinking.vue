@@ -29,15 +29,18 @@ const doveMarker = [
     x: 50,
     y: 50,
     size: 600,
-    label: false
+    label: false,
+    zIndex: 10
   },
   {
     id: 'cigarette2',
+    link: '/subside/hedgehog-night-walk',
     image: '/images/sides/cigarette2.png',
     x: 43,
     y: 38,
     size: 100,
-    label: false
+    label: false,
+    zIndex: 50
   }
 ]
 </script>
