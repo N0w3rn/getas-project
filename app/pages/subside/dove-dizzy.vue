@@ -15,7 +15,7 @@ const doveMarker = [
   {
     id: 'dove-dizzy',
     link: '/subside/dove-dizzy-fly',
-    image: '/images/sides/dove-dizzy.gif',
+    image: '/images/sides/dove-dizzy.webp',
     x: 50,
     y: 70,
     size: 560,

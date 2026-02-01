@@ -22,7 +22,7 @@ const doveMarker = [
   {
     id: 'hedgehog-night-walk',
     link: '/subside/hedgehog-night-walk',
-    image: '/images/sides/hedgehog-night-walk.gif',
+    image: '/images/sides/hedgehog-night-walk.webp',
     x: 53,
     y: 70,
     size: 240,

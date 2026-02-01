@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'dove-chill',
     link: '/subside/man-in-bed',
-    image: '/images/sides/TiredMan.gif',
+    image: '/images/sides/TiredMan.webp',
     x: 69,
     y: 37.6,
     size: 150,

@@ -29,7 +29,7 @@ const sceneMarkers = [
   {
     id: 'main-scene-marker',
     link: '/main-scene',
-    image: '/images/markers/marker-plan1.gif',
+    image: '/images/markers/marker-plan1.webp',
     x: 36,
     y: 25,
     size: 40,

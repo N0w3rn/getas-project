@@ -15,7 +15,7 @@ const doveMarker = [
   {
     id: 'bug-run-away',
     link: '/subside/dove-stuck',
-    image: '/images/sides/bug-run-away.gif',
+    image: '/images/sides/bug-run-away.webp',
     x: 47,
     y: 64.9,
     size: 380,

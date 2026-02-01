@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'dove-hungry',
     link: '/subside/dove-searches-food',
-    image: '/images/sides/hungry-dove.gif',
+    image: '/images/sides/hungry-dove.webp',
     x: 59,
     y: 32,
     size: 300,

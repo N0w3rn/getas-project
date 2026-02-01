@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'smoking-dove',
     link: '/subside/dove-chill',
-    image: '/images/sides/smoking-dove.gif',
+    image: '/images/sides/smoking-dove.webp',
     x: 50,
     y: 26,
     size: 300,

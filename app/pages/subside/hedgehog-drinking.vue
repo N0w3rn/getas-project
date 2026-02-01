@@ -25,10 +25,18 @@ const doveMarker = [
   {
     id: 'hedgehog-drinking',
     link: '/subside/hedgehog-night-walk',
-    image: '/images/sides/hedgehog-drinking.gif',
+    image: '/images/sides/hedgehog-drinking.webp',
     x: 50,
     y: 50,
     size: 600,
+    label: false
+  },
+  {
+    id: 'cigarette2',
+    image: '/images/sides/cigarette2.png',
+    x: 43,
+    y: 38,
+    size: 100,
     label: false
   }
 ]

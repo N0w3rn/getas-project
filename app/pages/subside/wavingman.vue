@@ -13,7 +13,7 @@
           class="ml-12 mt-[24vh] block transform hover:scale-110 transition-transform duration-300 cursor-pointer"
         >
           <img 
-            src="/images/sides/smokingMan.gif" 
+            src="/images/sides/smokingMan.webp" 
             alt="Jonas raucht"
             class="w-40 h-auto md:w-60 xl:w-[16rem] drop-shadow-2xl"
           />

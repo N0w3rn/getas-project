@@ -4,13 +4,21 @@
     :sources="sources"
     :close-button-text="$t('continue')"
   >
-    <InteractiveImage 
-      background-image="/images/bg/hedgehog-cozy-background.jpg"
-      :markers="doveMarker"
-      :animate-image="false"
-      fill-viewport
-      background-color="#1B2233"
-    />
+    <ClientOnly>
+      <InteractiveImage 
+        background-image="/images/bg/hedgehog-cozy-background.jpg"
+        :markers="doveMarker"
+        :animate-image="false"
+        fill-viewport
+        background-color="#1B2233"
+        use-nuxt-image
+      />
+      <template #fallback>
+        <div class="min-h-screen flex items-center justify-center bg-[#1B2233]">
+          <div class="text-white">Lädt...</div>
+        </div>
+      </template>
+    </ClientOnly>
   </PageWrapper>
 </template>
 
@@ -23,7 +31,7 @@ const doveMarker = [
   {
     id: 'hedgehog-cozy',
     link: '/subside/hedgehog-walking',
-    image: '/images/sides/hedgehog-cozy.gif',
+    image: '/images/sides/hedgehog-cozy.webp',
     x: 50,
     y: 82,
     size: 600,

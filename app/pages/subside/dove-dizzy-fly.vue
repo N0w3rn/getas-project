@@ -12,7 +12,7 @@
           class="block transform hover:scale-110 transition-transform duration-300 cursor-pointer"
         >
           <img 
-            src="/images/sides/dove-dizzy-fly.gif" 
+            src="/images/sides/dove-dizzy-fly.webp" 
             alt="Tabea fliegt"
             class="w-96 h-auto md:w-[32rem] lg:w-[40rem] xl:w-[48rem] drop-shadow-2xl"
           />

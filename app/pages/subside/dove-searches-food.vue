@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'dove-food-search',
     link: '/subside/bug-run-away',
-    image: '/images/sides/dove-food-search.gif',
+    image: '/images/sides/dove-food-search.webp',
     x: 87.7,
     y: 73.5,
     size: 150,

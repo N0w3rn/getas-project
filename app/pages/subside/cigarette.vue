@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'cigarette',
     link: '/subside/smoking-dove',
-    image: '/images/sides/cigarette.gif',
+    image: '/images/sides/cigarette.webp',
     x: 50,
     y: 50,
     size: 600,

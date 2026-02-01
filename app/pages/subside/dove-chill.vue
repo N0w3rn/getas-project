@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'dove-chill',
     link: '/subside/splash',
-    image: '/images/sides/shitting-dove.gif',
+    image: '/images/sides/shitting-dove.webp',
     x: 54,
     y: 44.5,
     size: 200,
