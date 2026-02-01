@@ -8,8 +8,10 @@
   "sources": "Quellen",
   "indexPageTextBlock1": {
     "intro": "Erlebe die Geschichten von Igor, Tabea und Jonas in einer interaktiven Reise durch die oft unsichtbaren Folgen menschlichen Handelns.",
-    "rules": "Spielregeln: klicke auf die Animationen, um die Geschichten weiter zu verfolgen.",
-    "tip": "Tipp: achte auf sich wiederholende Elemente oder Orte, die den Alltag unserer Protagonist*innen verknüpfen.",
+    "rulesLabel": "Spielregeln:",
+    "rulesText": "klicke auf die Animationen, um die Geschichten weiter zu verfolgen.",
+    "tipLabel": "Tipp:",
+    "tipText": "achte auf sich wiederholende Elemente oder Orte, die den Alltag unserer Protagonist*innen verknüpfen.",
     "greeting": "Drei Leben. Ein Ort. Willkommen im Bültenweg 12! Schön, dass du da bist."
   },
   "markers": {

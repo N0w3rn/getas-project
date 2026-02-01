@@ -47,8 +47,12 @@
                   
                   <div class="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
                     <p>{{ $t('indexPageTextBlock1.intro') }}</p>
-                    <p>{{ $t('indexPageTextBlock1.rules') }}</p>
-                    <p>{{ $t('indexPageTextBlock1.tip') }}</p>
+                    <p>
+                      <strong>{{ $t('indexPageTextBlock1.rulesLabel') }}</strong> {{ $t('indexPageTextBlock1.rulesText') }}
+                    </p>
+                    <p>
+                      <strong>{{ $t('indexPageTextBlock1.tipLabel') }}</strong> {{ $t('indexPageTextBlock1.tipText') }}
+                    </p>
                     <p>{{ $t('indexPageTextBlock1.greeting') }}</p>
                   </div>
 

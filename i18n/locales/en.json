@@ -8,8 +8,10 @@
   "sources": "Sources",
   "indexPageTextBlock1": {
     "intro": "Experience the stories of Igor, Tabea, and Jonas on an interactive journey through the often invisible consequences of human actions.",
-    "rules": "Game rules: click on the animations to continue following the stories.",
-    "tip": "Tip: pay attention to recurring elements or places that connect the everyday lives of our protagonists.",
+    "rulesLabel": "Game rules:",
+    "rulesText": "click on the animations to continue following the stories.",
+    "tipLabel": "Tip:",
+    "tipText": "pay attention to recurring elements or places that connect the everyday lives of our protagonists.",
     "greeting": "Three lives. One place. Welcome to Bültenweg 12! We're glad you're here."
   },
   "markers": {
