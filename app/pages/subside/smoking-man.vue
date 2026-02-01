@@ -1,7 +1,7 @@
 <template>
   <PageWrapper :help-content="$t('markers.smokingManDescription')">
       <InteractiveImage 
-        background-image="/images/bg/scene-background.JPG"
+        background-image="/images/bg/scene-background.jpg"
         :markers="doveMarker"
         fill-viewport
         background-color="#B5B4AF"

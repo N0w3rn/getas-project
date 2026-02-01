@@ -1,7 +1,7 @@
 <template>
   <PageWrapper>
       <InteractiveImage 
-        background-image="/images/bg/breakfast-background.JPG"
+        background-image="/images/bg/breakfast-background.jpg"
         :markers="doveMarker"
         fill-viewport
         background-color="#B5B4AF"
