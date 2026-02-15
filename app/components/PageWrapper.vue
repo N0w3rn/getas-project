@@ -106,6 +106,27 @@
                 <div class="px-4 py-6 sm:px-6 sm:py-8 md:px-10 md:py-10 lg:px-12 overflow-y-auto max-h-[90vh] sm:max-h-[85vh] md:max-h-[80vh]">
                   <div class="space-y-6 sm:space-y-7 md:space-y-8">
                     <!-- Title -->
+                    <div v-if="helpBookTitle" class="space-y-3 sm:space-y-4 text-center pr-6 sm:pr-8 md:pr-0">
+                      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight leading-tight">
+                        {{ helpBookTitle }}
+                      </h2>
+                      <div class="w-12 sm:w-14 md:w-16 h-0.5 sm:h-0.5 md:h-1 bg-gray-900 mx-auto"></div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                      <!-- HTML Content -->
+                      <div 
+                        v-if="renderHtml && helpBookContent"
+                        v-html="helpBookContent"
+                        class="prose prose-sm sm:prose-base prose-gray max-w-none"
+                      ></div>
+                      
+                      <!-- Plain Text Content with automatic superscript conversion -->
+                      <div v-else-if="helpBookContent" v-html="formattedBookContent"></div>
+                    </div>
+
+                    <div v-if="helpTitle || helpContent && helpBookContent || helpBookTitle" class="border-t border-gray-300"/>
                     <div v-if="helpTitle" class="space-y-3 sm:space-y-4 text-center pr-6 sm:pr-8 md:pr-0">
                       <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight leading-tight">
                         {{ helpTitle }}
@@ -176,6 +197,14 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  helpBookTitle: {
+    type: String,
+    default: ''
+  },
+  helpBookContent: {
+    type: String,
+    default: ''
+  },
   renderHtml: {
     type: Boolean,
     default: false
@@ -197,6 +226,11 @@ const closeButtonTextCompo = computed(() =>
 const formattedContent = computed(() => {
   if (!props.helpContent) return ''
   return props.helpContent.replace(/(\d+)\*/g, '<sup>$1</sup>')
+})
+
+const formattedBookContent = computed(() => {
+  if (!props.helpBookContent) return ''
+  return props.helpBookContent.replace(/(\d+)\*/g, '<sup>$1</sup>')
 })
 
 const router = useRouter()

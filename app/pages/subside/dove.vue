@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper :help-content="$t('dove.takeOff.content')">
+  <PageWrapper :help-content="$t('dove.takeOff.helpContent')" :help-book-content="$t('dove.takeOff.content')" :sources="sources">
     <div class="relative min-h-screen w-full overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center"
@@ -24,6 +24,10 @@
 </template>
 
 <script setup>
+const sources = [
+  'Colin Jerolmack, The Global Pigeon (Chicago: University of Chicago Press, 2013), 42–46.'
+]
+
 const localePath = useLocalePath()
 </script>
 

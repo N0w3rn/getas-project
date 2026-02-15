@@ -74,8 +74,8 @@
       "content": "Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden."
     },
     "takeOff": {
-      "content": "Tabea fliegt los. Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht. Was gehört eigentlich zu einem Nest? Unter ihr liegt der Hinterhof voller Dinge. Manche glitzern, manche duften. Vielleicht ist hier etwas dabei."
-    }
+      "content": "Tabea fliegt los. Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht. Was gehört eigentlich zu einem Nest? Unter ihr liegt der Hinterhof voller Dinge. Manche glitzern, manche duften. Vielleicht ist hier etwas dabei.",
+      "helpContent": "Stadttauben stammen von domestizierten Haustauben ab, die über Generationen eng an den Menschen gebunden waren. Nach ihrer Verwilderung im urbanen Raum fehlen ihnen häufig stabile, artspezifische Strukturen zur Weitergabe von Nestbauverhalten, sodass sie auf Materialien und Reize ihrer unmittelbaren Umgebung reagieren.1*"}
   },
   "markers": {
     "smokingManDescription": "Jonas raucht wie 28% aller Deutschen"
