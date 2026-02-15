@@ -28,6 +28,15 @@
     },
     "nightWalk": {
       "content": "Igor continues to search for something edible. His sense of smell is very good.1* So he follows his nose and waddles towards the organic waste."
+    },
+    "maggots": {
+      "content": "His nose has not let Igor down. Worms and maggots are crawling around in the fermented mandarins. Hedgehogs are carnivores; in addition to today's buffet, Igor also likes to eat insects, earthworms, and snails.1*"
+    },
+    "dayWalking": {
+      "content": "Igor has been searching for his pile of leaves all night. Due to the cigarette in the puddle he drank from, he is suffering from nicotine poisoning. On top of that, he is a bit drunk. He accidentally ate the fermented mandarins while hungrily devouring the maggots. It is already light again when Igor, disoriented, runs onto the street."
+    },
+    "scared": {
+      "content": "Frightened, Igor rolls himself into a ball, hoping that his spines will protect him. Fact check: \"About half a million hedgehogs die in traffic accidents each year. In addition, roads cut through the habitat of these animals and make their lives difficult as insurmountable barriers. In residential areas, obstacles such as fences or walls also significantly restrict their freedom of movement. When hedgehogs can no longer reach neighboring areas, small isolated populations emerge in which genetic exchange is limited and the long-term survival of the species is at risk.\"1*"
     }
   },
   "man": {
@@ -40,7 +49,8 @@
       "content": "Tabea lands on a fence. Plants grow all around and tickle her claws. From here she can see everything…"
     },
     "cigaretteFind": {
-      "content": "Down in the puddle lies something strange. It is long, soft and a bit dirty."
+      "content": "Down in the puddle lies something strange. It is long, soft and a bit dirty.",
+      "helpContent": "Cigarette butts are among the most common waste products in urban spaces and contain numerous toxic substances such as nicotine and heavy metals. When they end up in puddles or soil, these substances can enter the environment and pose a risk to animals that come into contact with them.1*"
     },
     "smokingDove": {
       "content": "Tabea pecks at it carefully. Quickly she flies back up to the fence to take a closer look. This could be good for a nest!"
@@ -58,7 +68,8 @@
       "content": "Fortunately, Tabea knows a place where there is always something to eat. You just have to search a little…"
     },
     "bugRunAway": {
-      "content": "A beetle crawls out from between the pipes. Tabea's eyes widen. But the beetle spots her and in the next second it has disappeared. But not with Tabea…<br><br>Fearlessly, she throws herself headfirst after it."
+      "content": "A beetle crawls out from between the pipes. Tabea's eyes widen. But the beetle spots her and in the next second it has disappeared. But not with Tabea…<br><br>Fearlessly, she throws herself headfirst after it.",
+      "helpContent": "City pigeons adapt their feeding behavior flexibly to the conditions of urban spaces and react opportunistically to available food sources such as insects. Human waste structures can become so-called ecological traps, as they attract animals but expose them to increased risks such as entanglement or injury.1*"
     },
     "stuck": {
       "content": "Oh great! Suddenly nothing works anymore. Tabea is stuck. It rustles and crackles around her. The plastic pulls at her wings."
@@ -67,14 +78,29 @@
       "content": "After a long struggle, Tabea tumbles back out of the pipe. She is confused, her feathers standing out wildly from her body."
     },
     "dizzyFly": {
-      "content": "Confused, Tabea flies on. Her nest absolutely must be finished."
+      "content": "Confused, Tabea flies on. Her nest absolutely must be finished. Suddenly she hears something strange. Curiously, she flies after the sound…"
+    },
+    "hopping": {
+      "content": "She really must continue building her nest, but what should she do now? Hopping, she tries to gather the last things for her nest."
+    },
+    "windowCrash": {
+      "content": "Tabea flies toward the sound, faster and faster. Suddenly there is something hard, smooth, invisible. Boom. Her breath is taken away, and everything goes dark."
+    },
+    "crash": {
+      "content": "Tabea hits the ground hard. After some time, she regains consciousness. But one of her wings can no longer move.",
+      "helpContent": "Bird collisions with glass surfaces do not always result in immediate death, but often lead to broken bones, internal injuries, or impaired flight ability. Injured birds are thus forced to continue moving through urban spaces with restrictions and are more dependent on ground-level resources.1*"
     },
     "takeOff": {
-      "content": "Tabea flies off. She wants to build a nest for the very first time — but no one has shown her how to do it. What actually belongs in a nest? Below her lies the backyard full of things. Some sparkle, some have a scent. Maybe there's something here."
+      "content": "Tabea flies off. She wants to build a nest for the very first time — but no one has shown her how to do it. What actually belongs in a nest? Below her lies the backyard full of things. Some sparkle, some have a scent. Maybe there's something here.",
+      "helpContent": "City pigeons are descended from domesticated house pigeons that were closely tied to humans over generations. After becoming feral in urban spaces, they often lack stable, species-specific structures for passing on nest-building behavior, so they react to materials and stimuli in their immediate environment.1*"
+    },
+    "nestDone": {
+      "content": "Finally, Tabea's nest is finished. She is very exhausted, but also very proud that she managed to build a nest. In her nest lie old cable scraps, screws, a half-eaten apple, paper scraps, and the cigarette.",
+      "helpContent": "In urban spaces, birds increasingly use human-made materials such as plastic, cables, or paper for nest building, as natural materials are only available to a limited extent. This practice reflects the close interweaving of animal life and human infrastructure and makes visible how animals in the Anthropocene survive in fragmented habitats shaped by waste.1* Tabea's nest is not a mistake, but a response to her environment."
     }
   },
   "markers": {
-    "smokingManDescription": "Jonas smokes like 28% of all Germans.",
+    "smokingManDescription": "Jonas smokes like 28% of all Germans",
     "dove": {
       "title": "Tabea takes off.",
       "description1": "She wants to build a nest for the very first time—but no one has shown her how.",
