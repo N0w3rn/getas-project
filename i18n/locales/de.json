@@ -28,6 +28,15 @@
     },
     "nightWalk": {
       "content": "Igor sucht weiter nach etwas essbarem. Sein Geruchsinn ist sehr gut.1* Er folgt also seiner Nase und watschelt Richtung Biomüll."
+    },
+    "maggots": {
+      "content": "Seine Nase hat Igor nicht im Stich gelassen. In den vergorenen Mandarinen krabbeln Würmer und Maden herum. Igel sind Fleischfresser, neben dem heutigen Buffet isst Igor sonst auch gerne Insekten, Regenwürmer und Schnecken. 1*"
+    },
+    "dayWalking": {
+      "content": "Igor hat die ganze Nacht nach seinem Laubhaufen gesucht. Durch die Zigarette in der Pfütze, aus der er getrunken hat, leidet er unter einer Nikotinvergiftung. Dazu kommt noch, dass er ein bisschen betrunken ist. Er hat aus Versehen die vergorenen Mandarinen mitgegessen, als er hungrig die Maden fraß. Es ist schon wieder hell, als Igor Orientierungslos auf die Straße läuft."
+    },
+    "scared": {
+      "content": "Verängstigt rollt sich Igor in einem Ball zusammen, in Hoffnung, dass seine Stacheln ihn schützen. Faktencheck: „Pro Jahr sterben etwa eine halbe Million Igel im Straßenverkehr. Zudem zerschneiden Straßen den Lebensraum der Tiere und machen ihnen als unüberwindbare Barrieren das Leben schwer. Im Siedlungsraum schränken auch Hindernisse wie Zäune oder Mauern ihre Bewegungsfreiheit erheblich ein. Wenn Igel benachbarte Gebiete nicht mehr erreichen können, entstehen kleine isolierte Populationen, in denen der genetische Austausch begrenzt und das Überleben der Art langfristig gefährdet ist.“ 1*"
     }
   },
   "dove": {

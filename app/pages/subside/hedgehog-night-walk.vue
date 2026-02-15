@@ -20,7 +20,7 @@ const sources = [
 const doveMarker = [
   {
     id: 'hedgehog-night-walk',
-    link: '/subside/hedgehog-night-walk',
+    link: '/subside/hedgehog-maggots',
     image: '/images/sides/hedgehog-night-walk.webp',
     x: 53,
     y: 70,
