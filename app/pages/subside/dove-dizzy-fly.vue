@@ -8,7 +8,7 @@
 
       <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
         <NuxtLink 
-          :to="localePath('/subside/dove-dizzy-fly')"
+          :to="localePath('/subside/dove-window-crash')"
           class="block transform hover:scale-110 transition-transform duration-300 cursor-pointer"
         >
           <img 
