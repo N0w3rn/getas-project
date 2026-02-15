@@ -15,7 +15,7 @@ const doveMarker = [
   {
     id: 'dove-hopping',
     link: '/subside/dove-in-nest',
-    image: '/images/sides/dove-hopping.gif',
+    image: '/images/sides/dove-hopping.webp',
     x: 50,
     y: 60,
     size: 400,

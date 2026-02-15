@@ -18,7 +18,7 @@ const doveMarker = [
   {
     id: 'hedgehog-day-walking',
     link: '/subside/hedgehog-scared',
-    image: '/images/sides/hedgehog-day-walking.gif',
+    image: '/images/sides/hedgehog-day-walking.webp',
     x: 24,
     y: 72,
     size: 300,

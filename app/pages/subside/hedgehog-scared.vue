@@ -22,7 +22,7 @@ const doveMarker = [
   {
     id: 'hedgehog-scared',
     link: '/main-scene',
-    image: '/images/sides/hedgehog-scared.gif',
+    image: '/images/sides/hedgehog-scared.webp',
     x: 6,
     y: 78,
     size: 100,

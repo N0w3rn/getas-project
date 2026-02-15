@@ -18,7 +18,7 @@ const doveMarker = [
   {
     id: 'dove-in-nest',
     link: '/main-scene',
-    image: '/images/sides/dove-in-nest.gif',
+    image: '/images/sides/dove-in-nest.webp',
     x: 50,
     y: 60,
     size: 200,

@@ -14,7 +14,7 @@ const doveMarker = [
   {
     id: 'dove-window-crash',
     link: '/subside/dove-crash',
-    image: '/images/sides/dove-window-crash.gif',
+    image: '/images/sides/dove-window-crash.webp',
     x: 40,
     y: 26,
     size: 300,
