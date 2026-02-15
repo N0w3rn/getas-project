@@ -47,7 +47,7 @@
 
     <!-- Right Side: Help/Question Button -->
     <button
-      v-if="helpTitle || helpContent"
+      v-if="helpTitle || helpContent || helpBookContent || helpBookTitle"
       @click="toggleHelp"
       class="fixed top-4 right-4 md:top-5 md:right-5 lg:top-6 lg:right-6 z-50 p-2 md:p-2.5 lg:p-3 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group ring-2 ring-gray-400"
       aria-label="Help"
@@ -217,6 +217,8 @@ const props = defineProps({
     default: () => []
   }
 })
+
+console.log('helpBookContent:', props.helpBookContent)
 
 const closeButtonTextCompo = computed(() => 
   props.closeButtonText || t('continue')

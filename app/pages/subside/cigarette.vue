@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper :help-content="$t('dove.cigaretteFind.content')">
+  <PageWrapper :help-content="$t('dove.cigaretteFind.helpContent')" :help-book-content="$t('dove.cigaretteFind.content')" :sources="sources">
       <InteractiveImage 
         background-image="/images/bg/cigarette-background.JPG"
         :markers="doveMarker"
@@ -10,6 +10,11 @@
 </template>
 
 <script setup>
+const sources = [
+  'Erin Slaughter et al., “Cigarette Butts as Environmental Contaminants,” Tobacco Control 20, no. 1 (2011): i25–i29.'
+]
+
+
 const doveMarker = [
   {
     id: 'cigarette',

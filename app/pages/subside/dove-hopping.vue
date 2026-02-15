@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper :help-book-content="$t('dove.hopping.content')">
         <InteractiveImage 
           background-image="/images/bg/dove-hopping-background.jpg"
           :markers="doveMarker"

@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper :sources="sources" :help-book-content="$t('dove.crash.content')" :help-content="$t('dove.crash.helpContent')">
         <InteractiveImage 
           background-image="/images/bg/dove-crashed-background.jpg"
           :markers="doveMarker"
@@ -10,6 +10,10 @@
 </template>
 
 <script setup>
+const sources = [
+  'Daniel Klem Jr., “Window Collisions,” Bird Observer 18, no. 2 (1990): 90–101.'
+]
+
 const doveMarker = [
   {
     id: 'dove-crashed',

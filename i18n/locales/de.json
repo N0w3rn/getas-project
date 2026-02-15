@@ -44,7 +44,8 @@
       "content": "Tabea landet auf einem Gatter. Pflanzen wachsen rundherum und kitzeln ihre Krallen. Von hier kann sie alles sehen…"
     },
     "cigaretteFind": {
-      "content": "Unten in der Pfütze liegt etwas Merkwürdiges. Es ist lang, weich und ein bisschen schmutzig."
+      "content": "Unten in der Pfütze liegt etwas Merkwürdiges. Es ist lang, weich und ein bisschen schmutzig.",
+      "helpContent": "Zigarettenstummel gehören zu den häufigsten Abfallprodukten im urbanen Raum und enthalten zahlreiche giftige Substanzen wie Nikotin und Schwermetalle. Gelangen sie in Pfützen oder Böden, können diese Stoffe in die Umwelt übergehen und stellen ein Risiko für Tiere dar, die mit ihnen in Kontakt kommen.1*"
     },
     "smokingDove": {
       "content": "Tabea pickt es vorsichtig an. Schnell fliegt sie wieder hoch auf das Gatter um es näher betrachten zu können. Das könnte gut für ein Nest sein!"
@@ -62,7 +63,8 @@
       "content": "Zum Glück kennt Tabea einen Ort, an dem immer etwas zu Essen zu finden ist. Man muss nur ein bisschen suchen…"
     },
     "bugRunAway": {
-      "content": "Zwischen den Rohren krabbelt ein Käfer hervor. Tabeas Augen werden groß. Doch der Käfer entdeckt sie und in der nächsten Sekunde ist er auch schon wieder verschwunden. Aber nicht mit Tabea…<br><br>Todesmutig wirft sie sich kopfüber hinterher."
+      "content": "Zwischen den Rohren krabbelt ein Käfer hervor. Tabeas Augen werden groß. Doch der Käfer entdeckt sie und in der nächsten Sekunde ist er auch schon wieder verschwunden. Aber nicht mit Tabea…<br><br>Todesmutig wirft sie sich kopfüber hinterher.",
+      "helpContent": "Stadttauben passen ihr Fressverhalten flexibel an die Bedingungen des urbanen Raums an und reagieren opportunistisch auf verfügbare Nahrungsquellen wie Insekten. Menschliche Abfallstrukturen können dabei zu sogenannten ökologischen Fallen werden, da sie Tiere anziehen, ihnen jedoch erhöhte Risiken wie Verfangen oder Verletzungen aussetzen.1*"
     },
     "stuck": {
       "content": "Na toll! Plötzlich geht nichts mehr. Tabea steckt fest. Es raschelt und knistert um sie herum. Das Plastik zieht an ihren Flügeln."
@@ -71,11 +73,26 @@
       "content": "Nach einem langen Kampf plumpst Tabea wieder aus der Röhre heraus. Sie ist verwirrt, die Federn stehen wirr von ihrem Körper ab."
     },
     "dizzyFly": {
-      "content": "Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden."
+      "content": "Verwirrt fliegt Tabea weiter. Ihr Nest muss unbedingt fertig werden. Auf einmal hört sie etwas Komisches. Neugierig fliegt sie dem Geräusch hinterher …"
+    },
+    "hopping": {
+      "content": "Sie muss doch ihr Nest weiterbauen, aber was soll sie jetzt tun? Hüpfend versucht sie, die letzten Dinge für ihr Nest zu sammeln."
+    },
+    "windowCrash": {
+      "content": "Tabea fliegt dem Geräusch entgegen, immer schneller. Plötzlich ist da etwas Hartes, Glattes, Unsichtbares. Bumm. Ihr bleibt die Luft bleibt weg, und alles wird dunkel."
+    },
+    "crash": {
+      "content": "Tabea schlägt hart auf dem Boden auf. Nach einiger Zeit kommt sie wieder zu sich. Doch ihr einer Flügel lässt sich nicht mehr bewegen.",
+      "helpContent": "Kollisionen von Vögeln mit Glasflächen führen nicht immer zum sofortigen Tod, sondern häufig zu Knochenbrüchen, inneren Verletzungen oder eingeschränkter Flugfähigkeit. Verletzte Vögel bleiben dadurch gezwungen, sich eingeschränkt im urbanen Raum weiterzubewegen und sind stärker auf bodennahe Ressourcen angewiesen.1*"
     },
     "takeOff": {
       "content": "Tabea fliegt los. Sie will ein Nest bauen, zum allerersten Mal – doch niemand hat ihr gezeigt, wie das geht. Was gehört eigentlich zu einem Nest? Unter ihr liegt der Hinterhof voller Dinge. Manche glitzern, manche duften. Vielleicht ist hier etwas dabei.",
-      "helpContent": "Stadttauben stammen von domestizierten Haustauben ab, die über Generationen eng an den Menschen gebunden waren. Nach ihrer Verwilderung im urbanen Raum fehlen ihnen häufig stabile, artspezifische Strukturen zur Weitergabe von Nestbauverhalten, sodass sie auf Materialien und Reize ihrer unmittelbaren Umgebung reagieren.1*"}
+      "helpContent": "Stadttauben stammen von domestizierten Haustauben ab, die über Generationen eng an den Menschen gebunden waren. Nach ihrer Verwilderung im urbanen Raum fehlen ihnen häufig stabile, artspezifische Strukturen zur Weitergabe von Nestbauverhalten, sodass sie auf Materialien und Reize ihrer unmittelbaren Umgebung reagieren.1*"
+    },
+    "nestDone": {
+      "content": "Endlich ist Tabeas Nest fertig. Sie ist sehr erschöpft, aber auch sehr stolz, dass sie es geschafft hat, ein Nest zu bauen. In ihrem Nest liegen alte Kabelreste, Schrauben, ein angebissener Apfel, Papierreste und die Zigarette.",
+      "helpContent": "Im urbanen Raum nutzen Vögel zunehmend menschengemachte Materialien wie Plastik, Kabel oder Papier für den Nestbau, da natürliche Materialien nur eingeschränkt verfügbar sind. Diese Praxis spiegelt die enge Verflechtung von tierischem Leben und menschlicher Infrastruktur wider und macht sichtbar, wie Tiere im Anthropozän in fragmentierten, von Abfällen geprägten Lebensräumen überleben.1*Tabeas Nest ist kein Fehler, sondern eine Antwort auf ihre Umgebung."
+    }
   },
   "markers": {
     "smokingManDescription": "Jonas raucht wie 28% aller Deutschen"

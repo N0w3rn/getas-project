@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper>
+  <PageWrapper :help-book-content="$t('dove.windowCrash.content')">
         <InteractiveImage 
           background-image="/images/bg/dove-window-crash-background.jpg"
           :markers="doveMarker"
