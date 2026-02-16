@@ -27,6 +27,15 @@ const doveMarker = [
     y: 78,
     size: 100,
     label: false
+  },
+  {
+    id: 'car',
+    link: '/subside/workstation',
+    image: '/images/sides/car.webp',
+    x: 50,
+    y: 35.4,
+    size: 200,
+    label: false
   }
 ]
 </script>
