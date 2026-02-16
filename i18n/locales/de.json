@@ -37,6 +37,13 @@
     },
     "scared": {
       "content": "Verängstigt rollt sich Igor in einem Ball zusammen, in Hoffnung, dass seine Stacheln ihn schützen. Faktencheck: „Pro Jahr sterben etwa eine halbe Million Igel im Straßenverkehr. Zudem zerschneiden Straßen den Lebensraum der Tiere und machen ihnen als unüberwindbare Barrieren das Leben schwer. Im Siedlungsraum schränken auch Hindernisse wie Zäune oder Mauern ihre Bewegungsfreiheit erheblich ein. Wenn Igel benachbarte Gebiete nicht mehr erreichen können, entstehen kleine isolierte Populationen, in denen der genetische Austausch begrenzt und das Überleben der Art langfristig gefährdet ist.“ 1*"
+    },
+    "firework": {
+      "content": "Es ist Sylvester und Jonas feiert mit seinen Freund*innen. Der ganze Lärm hat Igor aus seinem Winterschlaf geweckt. Er ist schwach und hungrig, hat zu wenig Nahrung gefunden diesen Herbst. Er hat keine Kraft mehr aus seinem Laubhaufen zu kommen.",
+      "helpContent": "„Die Böllerei verursacht auch bei unseren Wildtieren enormen Stress und das in einer besonders sensiblen Zeit. Denn im Winter ist Futter schwerer zu finden und sie müssen mit ihrer Energie haushalten. Die Wildtiere werden aufgeschreckt, können Lärm und Lichtreflexe nicht zuordnen und geraten in absolute Panik.“ 1* Im Winterschlaf ist der Igel in einer Art biologscher Sparmodus. Der Herzschlag und die Atmung verlangsamen sich. Der Stoffwechsel fährt auf ein Minimum runter und die Körpertemperatur nimmt ab. 2* Bei Lärm, wie z.B. Feuerwerk zucke Igel zusammen oder wachen aus ihrem Winterschlaf auf. Das „Hochfahren“ des Sparmodus ist sehr energieintensiv. Wenn ein erwachter Igel keine Nahrung findet, kann ihm das zum Verhängnis werden. 3*"
+    },
+    "end": {
+      "content": "Igor der kleine Igel hat keine Kraft mehr."
     }
   },
   "dove": {

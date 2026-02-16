@@ -21,7 +21,7 @@ const sources = [
 const doveMarker = [
   {
     id: 'hedgehog-scared',
-    link: '/main-scene',
+    link: '/subside/hedgehog-firework',
     image: '/images/sides/hedgehog-scared.webp',
     x: 6,
     y: 78,

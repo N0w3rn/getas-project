@@ -37,6 +37,13 @@
     },
     "scared": {
       "content": "Frightened, Igor rolls himself into a ball, hoping that his spines will protect him. Fact check: \"About half a million hedgehogs die in traffic accidents each year. In addition, roads cut through the habitat of these animals and make their lives difficult as insurmountable barriers. In residential areas, obstacles such as fences or walls also significantly restrict their freedom of movement. When hedgehogs can no longer reach neighboring areas, small isolated populations emerge in which genetic exchange is limited and the long-term survival of the species is at risk.\"1*"
+    },
+    "firework": {
+      "content": "It's New Year's Eve and Jonas is celebrating with his friends. All the noise has woken Igor from his hibernation. He is weak and hungry, having found too little food this autumn. He has no strength left to leave his pile of leaves.",
+      "helpContent": "The fireworks also cause enormous stress for our wildlife, and that at a particularly sensitive time. Because in winter, food is harder to find and they have to conserve their energy. The wild animals are startled, cannot make sense of the noise and light reflections and fall into absolute panic.\" 1* During hibernation, the hedgehog is in a kind of biological power-saving mode. The heartbeat and breathing slow down. The metabolism drops to a minimum and body temperature decreases. 2* With noise, such as fireworks, hedgehogs flinch or wake up from their hibernation. The \"reboot\" from power-saving mode is very energy-intensive. If an awakened hedgehog finds no food, it can be fatal for them. 3*"
+    },
+    "end": {
+      "content": "Igor the little hedgehog has no strength left."
     }
   },
   "man": {
