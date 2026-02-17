@@ -218,8 +218,6 @@ const props = defineProps({
   }
 })
 
-console.log('helpBookContent:', props.helpBookContent)
-
 const closeButtonTextCompo = computed(() => 
   props.closeButtonText || t('continue')
 )
