@@ -19,6 +19,15 @@ const doveMarker = [
     y: 51,
     size: 120,
     label: false
+  },
+  {
+    id: 'scented-tree',
+    link: '/subside/car',
+    image: '/images/sides/scented-tree.webp',
+    x: 37,
+    y: 78,
+    size: 20,
+    label: false
   }
 ]
 </script>
